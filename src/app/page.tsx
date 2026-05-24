@@ -214,7 +214,7 @@ export default function Home() {
           >
             <h2 className="text-4xl font-bold text-navy-900 mb-4">Why Choose Kentank?</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              We're committed to providing the best water storage solutions in Kenya
+              We&apos;re committed to providing the best water storage solutions in Kenya
             </p>
           </motion.div>
 
@@ -271,7 +271,7 @@ export default function Home() {
                       <Star key={i} className="w-5 h-5 text-orange-500 fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-600 mb-4 italic">"{testimonial.text}"</p>
+                  <p className="text-gray-600 mb-4 italic">&quot;{testimonial.text}&quot;</p>
                   <div>
                     <p className="font-bold text-navy-900">{testimonial.name}</p>
                     <p className="text-gray-500 text-sm">{testimonial.location}</p>

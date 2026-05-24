@@ -42,7 +42,7 @@ const Footer = () => {
               <span className="font-bold text-2xl">Kentank</span>
             </div>
             <p className="text-gray-400 mb-6">
-              Kenya's leading manufacturer of premium water storage solutions. Trusted by homes, farms, and industries nationwide.
+              Kenya&apos;s leading manufacturer of premium water storage solutions. Trusted by homes, farms, and industries nationwide.
             </p>
             <div className="flex gap-4">
               {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (

@@ -6,12 +6,12 @@ import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
-import { 
-  Award, 
-  Shield, 
-  Factory, 
-  Users, 
-  Target, 
+import {
+  Award,
+  Shield,
+  Factory,
+  Users,
+  Target,
   Eye,
   CheckCircle,
   Globe
@@ -76,7 +76,7 @@ export default function About() {
   return (
     <main className="min-h-screen bg-gray-50">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="relative py-32 bg-gradient-to-r from-navy-900 to-navy-800 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -90,7 +90,7 @@ export default function About() {
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">About Kentank</h1>
             <p className="text-xl text-gray-300 leading-relaxed">
-              Kenya's leading manufacturer of premium water storage solutions. For over 15 years, we've been providing durable, high-quality water tanks to homes, farms, and industries across the country.
+              Kenya&apos;s leading manufacturer of premium water storage solutions. For over 15 years, we&apos;ve been providing durable, high-quality water tanks to homes, farms, and industries across the country.
             </p>
           </motion.div>
         </div>
@@ -127,7 +127,7 @@ export default function About() {
                 <h2 className="text-3xl font-bold text-navy-900">Our Vision</h2>
               </div>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                To be East Africa's most trusted and innovative water storage solutions provider, known for quality, reliability, and exceptional customer service.
+                To be East Africa&apos;s most trusted and innovative water storage solutions provider, known for quality, reliability, and exceptional customer service.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 We envision a future where every Kenyan household and business has access to reliable water storage, contributing to water security across the nation.
@@ -177,7 +177,7 @@ export default function About() {
                 Over the years, we have grown from a small team of 5 employees to a workforce of over 200 skilled professionals, operating from two state-of-the-art manufacturing facilities.
               </p>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Today, we are proud to serve over 50,000 customers across all 47 counties in Kenya, making us one of the country's most trusted water tank manufacturers.
+                Today, we are proud to serve over 50,000 customers across all 47 counties in Kenya, making us one of the country&apos;s most trusted water tank manufacturers.
               </p>
               <p className="text-gray-600 text-lg leading-relaxed">
                 Our commitment to quality, innovation, and customer satisfaction has earned us numerous certifications and awards, including KEBS certification and ISO 9001:2015 quality management certification.
@@ -204,7 +204,7 @@ export default function About() {
 
           <div className="relative">
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-orange-500 hidden md:block" />
-            
+
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
                 <motion.div

@@ -44,6 +44,16 @@ const HeroSlideshow = () => {
       title: 'Affordable Pricing',
       subtitle: 'Competitive rates for all tank sizes',
     },
+    {
+      image: '/assets/vetical.jpeg',
+      title: 'Expert Installation',
+      subtitle: 'Professional team for perfect setup',
+    },
+    {
+      image: '/assets/verical.jpeg',
+      title: 'Customer Satisfaction',
+      subtitle: 'Over 50,000 happy customers nationwide',
+    },
   ];
 
   const nextSlide = () => {

@@ -1,7 +1,7 @@
-import { motion, HTMLMotionProps } from 'framer-motion';
-import { ReactNode } from 'react';
+import { motion } from 'framer-motion';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 
-interface ButtonProps extends HTMLMotionProps<"button"> {
+interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onAnimationStart' | 'onDragStart' | 'onDragEnd' | 'onDrag'> {
   children: ReactNode;
   variant?: 'primary' | 'secondary' | 'outline' | 'whatsapp';
   size?: 'sm' | 'md' | 'lg';

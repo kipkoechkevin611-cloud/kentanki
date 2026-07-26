@@ -56,7 +56,7 @@ export default function TermsOfService() {
               </p>
               <ul className="list-disc list-inside text-gray-600 space-y-2">
                 <li>KEBS certified for quality assurance</li>
-                <li>Covered by manufacturer warranty (25 years)</li>
+                <li>Covered by manufacturer warranty (15 years)</li>
                 <li>Suitable for their intended purposes</li>
                 <li>Delivered with free countrywide shipping</li>
               </ul>

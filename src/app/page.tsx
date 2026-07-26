@@ -63,6 +63,14 @@ export default function Home() {
       image: '/assets/loft tank.jpeg',
       description: 'Compact design for rooftop installations',
     },
+    {
+      id: 4,
+      name: 'Septic Tank',
+      capacity: '3000L',
+      price: 'KSh 14,500',
+      image: '/assets/Septic Tank.jpeg',
+      description: 'Durable septic tank for waste management',
+    },
   ];
 
   const testimonials = [
@@ -99,7 +107,7 @@ export default function Home() {
     },
     {
       icon: Clock,
-      title: '25 Year Warranty',
+      title: '15 Year Warranty',
       description: 'Industry-leading warranty for peace of mind',
     },
     {
@@ -170,7 +178,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-2 text-white">
                   <Shield className="w-4 h-4 md:w-5 md:h-5 text-orange-500" />
-                  <span className="text-xs md:text-sm">25-Year Warranty</span>
+                  <span className="text-xs md:text-sm">15-Year Warranty</span>
                 </div>
                 <div className="flex items-center gap-2 md:gap-3 bg-white/20 backdrop-blur-sm px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-white/30">
                   <Phone className="w-4 h-4 md:w-6 md:h-6 text-orange-500" />
@@ -221,7 +229,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
             {products.map((product, index) => (
               <motion.div
                 key={product.id}

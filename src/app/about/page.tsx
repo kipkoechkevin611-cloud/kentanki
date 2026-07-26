@@ -68,7 +68,7 @@ export default function About() {
       icon: CheckCircle,
     },
     {
-      name: '25 Year Warranty',
+      name: '15 Year Warranty',
       description: 'Industry-leading warranty on all products',
       icon: Award,
     },

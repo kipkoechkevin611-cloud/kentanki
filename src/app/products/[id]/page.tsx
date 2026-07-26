@@ -50,7 +50,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
       dimensions: '2.2m (Diameter) x 2.5m (Height)',
       material: 'Food-grade Polyethylene',
       color: 'Blue / Black / Green',
-      warranty: '25 Years',
+      warranty: '15 Years',
       weight: '180 kg',
       inlet: '150mm',
       outlet: '50mm',

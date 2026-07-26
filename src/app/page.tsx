@@ -8,7 +8,6 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import TankCalculator from '../components/TankCalculator';
 import WhatsAppOrderModal from '../components/WhatsAppOrderModal';
-import HeroSlideshow from '../components/HeroSlideshow';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import {
@@ -124,8 +123,64 @@ export default function Home() {
     <main className="min-h-screen">
       <Navigation />
 
-      {/* Hero Section with Slideshow */}
-      <HeroSlideshow />
+      {/* Hero Section - Static */}
+      <section className="relative h-[600px] bg-gradient-to-r from-navy-900 to-navy-800 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/assets/vertical (2).jpeg"
+            alt="Kentank Water Tanks"
+            fill
+            className="object-cover opacity-20"
+            priority
+            quality={80}
+          />
+        </div>
+        <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl"
+          >
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+              Premium Water Storage Solutions in Kenya
+            </h1>
+            <p className="text-xl text-gray-300 mb-8">
+              Genuine Rototank water tanks with free countrywide delivery. From 500L to 24,000L for homes, farms, and industries.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/products">
+                <Button variant="primary" size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
+                  <ShoppingCart className="w-5 h-5 mr-2" />
+                  Browse Products
+                </Button>
+              </Link>
+              <a href="tel:+254736010873">
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-navy-900">
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call +254 736 010 873
+                </Button>
+              </a>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-6 items-center">
+              <div className="flex items-center gap-2 text-white">
+                <Truck className="w-5 h-5 text-orange-500" />
+                <span className="text-sm">Free Delivery</span>
+              </div>
+              <div className="flex items-center gap-2 text-white">
+                <Shield className="w-5 h-5 text-orange-500" />
+                <span className="text-sm">25-Year Warranty</span>
+              </div>
+              <div className="flex items-center gap-3 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30">
+                <Phone className="w-6 h-6 text-orange-500" />
+                <a href="tel:+254736010873" className="text-lg font-bold text-white hover:text-orange-400 transition-colors">
+                  +254 736 010 873
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Stats Section */}
       <section className="py-16 bg-white">

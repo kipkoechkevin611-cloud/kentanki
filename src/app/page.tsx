@@ -124,58 +124,60 @@ export default function Home() {
       <Navigation />
 
       {/* Hero Section - Static */}
-      <section className="relative h-[500px] md:h-[600px] bg-gradient-to-r from-navy-900 to-navy-800 overflow-hidden">
+      <section className="relative h-[calc(100vh-80px)] min-h-[500px] md:min-h-[600px] bg-gradient-to-r from-navy-900 to-navy-800 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/assets/vertical (2).jpeg"
             alt="Kentank Water Tanks"
             fill
-            className="object-cover opacity-20"
+            className="object-cover opacity-15"
             priority
             quality={80}
           />
         </div>
-        <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
+        <div className="relative z-10 container mx-auto px-4 h-full flex items-center pt-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl w-full"
+            className="max-w-4xl w-full"
           >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
-              Premium Water Storage Solutions in Kenya
-            </h1>
-            <p className="text-base md:text-lg lg:text-xl text-gray-300 mb-6 md:mb-8 leading-relaxed">
-              Genuine Rototank water tanks with free countrywide delivery. From 500L to 24,000L for homes, farms, and industries.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-              <Link href="/products" className="flex-1 sm:flex-none">
-                <Button variant="primary" size="lg" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white">
-                  <ShoppingCart className="w-5 h-5 mr-2" />
-                  Browse Products
-                </Button>
-              </Link>
-              <a href="tel:+254736010873" className="flex-1 sm:flex-none">
-                <Button variant="outline" size="lg" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-navy-900">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call +254 736 010 873
-                </Button>
-              </a>
-            </div>
-            <div className="mt-6 md:mt-8 flex flex-wrap gap-4 md:gap-6 items-center">
-              <div className="flex items-center gap-2 text-white">
-                <Truck className="w-4 h-4 md:w-5 md:h-5 text-orange-500" />
-                <span className="text-xs md:text-sm">Free Delivery</span>
-              </div>
-              <div className="flex items-center gap-2 text-white">
-                <Shield className="w-4 h-4 md:w-5 md:h-5 text-orange-500" />
-                <span className="text-xs md:text-sm">25-Year Warranty</span>
-              </div>
-              <div className="flex items-center gap-2 md:gap-3 bg-white/20 backdrop-blur-sm px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-white/30">
-                <Phone className="w-4 h-4 md:w-6 md:h-6 text-orange-500" />
-                <a href="tel:+254736010873" className="text-sm md:text-lg font-bold text-white hover:text-orange-400 transition-colors">
-                  +254 736 010 873
+            <div className="bg-navy-900/60 backdrop-blur-sm rounded-2xl p-6 md:p-10 lg:p-12">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
+                Premium Water Storage Solutions in Kenya
+              </h1>
+              <p className="text-base md:text-lg lg:text-xl text-gray-200 mb-6 md:mb-8 leading-relaxed">
+                Genuine Rototank water tanks with free countrywide delivery. From 500L to 24,000L for homes, farms, and industries.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+                <Link href="/products" className="flex-1 sm:flex-none">
+                  <Button variant="primary" size="lg" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white">
+                    <ShoppingCart className="w-5 h-5 mr-2" />
+                    Browse Products
+                  </Button>
+                </Link>
+                <a href="tel:+254736010873" className="flex-1 sm:flex-none">
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-navy-900">
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call +254 736 010 873
+                  </Button>
                 </a>
+              </div>
+              <div className="mt-6 md:mt-8 flex flex-wrap gap-4 md:gap-6 items-center">
+                <div className="flex items-center gap-2 text-white">
+                  <Truck className="w-4 h-4 md:w-5 md:h-5 text-orange-500" />
+                  <span className="text-xs md:text-sm">Free Delivery</span>
+                </div>
+                <div className="flex items-center gap-2 text-white">
+                  <Shield className="w-4 h-4 md:w-5 md:h-5 text-orange-500" />
+                  <span className="text-xs md:text-sm">25-Year Warranty</span>
+                </div>
+                <div className="flex items-center gap-2 md:gap-3 bg-white/20 backdrop-blur-sm px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-white/30">
+                  <Phone className="w-4 h-4 md:w-6 md:h-6 text-orange-500" />
+                  <a href="tel:+254736010873" className="text-sm md:text-lg font-bold text-white hover:text-orange-400 transition-colors">
+                    +254 736 010 873
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>

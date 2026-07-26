@@ -22,7 +22,10 @@ import {
   Droplets,
   Factory,
   Users,
-  Clock
+  Clock,
+  MessageCircle,
+  MapPin,
+  CreditCard
 } from 'lucide-react';
 
 export default function Home() {
@@ -86,23 +89,33 @@ export default function Home() {
   const whyChooseUs = [
     {
       icon: Shield,
-      title: 'KEBS Certified',
-      description: 'All our tanks meet strict quality standards',
+      title: 'Genuine Rototank Products',
+      description: '100% authentic Rototank water tanks with manufacturer warranty',
     },
     {
       icon: Truck,
-      title: 'Nationwide Delivery',
-      description: 'Fast delivery to all 47 counties',
+      title: 'Free Countrywide Delivery',
+      description: 'Free delivery to all 47 counties in Kenya',
     },
     {
       icon: Clock,
       title: '25 Year Warranty',
-      description: 'Long-lasting durability guaranteed',
+      description: 'Industry-leading warranty for peace of mind',
     },
     {
       icon: Users,
       title: 'Expert Installation',
       description: 'Professional team for perfect setup',
+    },
+    {
+      icon: Award,
+      title: 'KEBS Certified',
+      description: 'All tanks meet strict quality standards',
+    },
+    {
+      icon: CheckCircle,
+      title: 'Secure Ordering',
+      description: 'Safe and secure ordering process via WhatsApp',
     },
   ];
 
@@ -218,7 +231,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {whyChooseUs.map((item, index) => (
               <motion.div
                 key={index}
@@ -279,6 +292,136 @@ export default function Home() {
                 </Card>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Order Process */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-navy-900 mb-4">How to Order</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Simple 4-step process to get your water tank delivered
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: MessageCircle,
+                title: 'Choose Your Tank',
+                description: 'Browse our catalog and select the perfect tank for your needs',
+                step: '1',
+              },
+              {
+                icon: ShoppingCart,
+                title: 'Place Your Order',
+                description: 'Order via WhatsApp or call us directly',
+                step: '2',
+              },
+              {
+                icon: CreditCard,
+                title: 'Make Payment',
+                description: 'Pay via M-Pesa, bank transfer, or cash on delivery',
+                step: '3',
+              },
+              {
+                icon: Truck,
+                title: 'Free Delivery',
+                description: 'Get your tank delivered to your doorstep nationwide',
+                step: '4',
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="relative"
+              >
+                <div className="absolute -top-4 -left-4 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                  {item.step}
+                </div>
+                <Card className="p-6 pt-8 h-full">
+                  <item.icon className="w-12 h-12 text-orange-500 mb-4" />
+                  <h3 className="text-xl font-bold text-navy-900 mb-2">{item.title}</h3>
+                  <p className="text-gray-600">{item.description}</p>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Delivery Timeline */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-navy-900 mb-4">Delivery Timeline</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Fast and reliable delivery to all 47 counties
+            </p>
+          </motion.div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6">
+              {[
+                {
+                  title: 'Order Confirmation',
+                  time: 'Within 1 hour',
+                  description: 'We confirm your order and provide delivery details',
+                },
+                {
+                  title: 'Processing',
+                  time: '1-2 business days',
+                  description: 'Your tank is prepared and scheduled for delivery',
+                },
+                {
+                  title: 'Transit',
+                  time: '2-5 business days',
+                  description: 'Your tank is on the way to your location',
+                },
+                {
+                  title: 'Delivery',
+                  time: '3-7 business days total',
+                  description: 'Your tank arrives at your location with installation support',
+                },
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="flex gap-4"
+                >
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold">
+                      {index + 1}
+                    </div>
+                  </div>
+                  <Card className="flex-1 p-6">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                      <h3 className="text-xl font-bold text-navy-900">{item.title}</h3>
+                      <span className="text-orange-500 font-semibold">{item.time}</span>
+                    </div>
+                    <p className="text-gray-600">{item.description}</p>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

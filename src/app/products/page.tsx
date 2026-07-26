@@ -3,12 +3,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import WhatsAppOrderModal from '../../components/WhatsAppOrderModal';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
-import { ShoppingCart, Filter, ArrowRight, Plus } from 'lucide-react';
+import { ShoppingCart, Filter, ArrowRight, Plus, Phone, MessageCircle, CheckCircle, Truck } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 
 export default function Products() {
@@ -16,6 +17,16 @@ export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedProduct, setSelectedProduct] = useState('');
   const { addToCart } = useCart();
+
+  const handleAddToCart = (product: any) => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      capacity: product.capacity,
+      price: product.price,
+      image: product.image,
+    });
+  };
 
   const categories = [
     { id: 'all', name: 'All Tanks' },
@@ -63,7 +74,7 @@ export default function Products() {
       name: 'Vertical Tank 1000L',
       category: 'vertical',
       capacity: '1000L',
-      price: 'KSh 4,500',
+      price: 'KSh 5,500',
       image: '/assets/vertical.jpeg',
       description: 'Standard vertical tank for average households',
       dimensions: '1.2m x 1.5m',
@@ -83,7 +94,7 @@ export default function Products() {
       name: 'Vertical Tank 2000L',
       category: 'vertical',
       capacity: '2000L',
-      price: 'KSh 9,200',
+      price: 'KSh 10,500',
       image: '/assets/vertical.jpeg',
       description: 'Extra-large vertical tank for homes',
       dimensions: '1.6m x 2.0m',
@@ -103,7 +114,7 @@ export default function Products() {
       name: 'Vertical Tank 3000L',
       category: 'vertical',
       capacity: '3000L',
-      price: 'KSh 14,200',
+      price: 'KSh 14,500',
       image: '/assets/vertical.jpeg',
       description: 'Large capacity for homes and small businesses',
       dimensions: '1.8m x 2.0m',
@@ -113,7 +124,7 @@ export default function Products() {
       name: 'Vertical Tank 4000L',
       category: 'vertical',
       capacity: '4000L',
-      price: 'KSh 19,500',
+      price: 'KSh 18,500',
       image: '/assets/vertical (2).jpeg',
       description: 'Extra-large capacity for commercial use',
       dimensions: '2.0m x 2.2m',
@@ -123,7 +134,7 @@ export default function Products() {
       name: 'Vertical Tank 5000L',
       category: 'vertical',
       capacity: '5000L',
-      price: 'KSh 24,500',
+      price: 'KSh 27,500',
       image: '/assets/vertical (2).jpeg',
       description: 'Premium capacity for homes and businesses',
       dimensions: '2.2m x 2.5m',
@@ -133,7 +144,7 @@ export default function Products() {
       name: 'Vertical Tank 6000L',
       category: 'vertical',
       capacity: '6000L',
-      price: 'KSh 29,800',
+      price: 'KSh 32,500',
       image: '/assets/vertical (2).jpeg',
       description: 'Large capacity for commercial properties',
       dimensions: '2.4m x 2.8m',
@@ -143,7 +154,7 @@ export default function Products() {
       name: 'Vertical Tank 8000L',
       category: 'vertical',
       capacity: '8000L',
-      price: 'KSh 39,500',
+      price: 'KSh 38,500',
       image: '/assets/vertical (2).jpeg',
       description: 'Extra-large capacity for industrial use',
       dimensions: '2.6m x 3.0m',
@@ -153,7 +164,7 @@ export default function Products() {
       name: 'Vertical Tank 10000L',
       category: 'vertical',
       capacity: '10000L',
-      price: 'KSh 49,000',
+      price: 'KSh 51,000',
       image: '/assets/vertical (2).jpeg',
       description: 'Massive capacity for commercial and industrial',
       dimensions: '2.8m x 3.2m',
@@ -170,9 +181,9 @@ export default function Products() {
     },
     {
       id: 15,
-      name: 'Vertical Tank 15000L',
+      name: 'Vertical Tank 16000L',
       category: 'vertical',
-      capacity: '15000L',
+      capacity: '16000L',
       price: 'KSh 72,500',
       image: '/assets/vertical (2).jpeg',
       description: 'Premium industrial capacity',
@@ -183,7 +194,7 @@ export default function Products() {
       name: 'Vertical Tank 20000L',
       category: 'vertical',
       capacity: '20000L',
-      price: 'KSh 98,000',
+      price: 'KSh 98,500',
       image: '/assets/vertical (2).jpeg',
       description: 'Massive industrial tank for factories',
       dimensions: '4.0m x 4.0m',
@@ -193,7 +204,7 @@ export default function Products() {
       name: 'Vertical Tank 24000L',
       category: 'vertical',
       capacity: '24000L',
-      price: 'KSh 120,000',
+      price: 'KSh 132,500',
       image: '/assets/vertical (2).jpeg',
       description: 'Largest capacity for major industrial operations',
       dimensions: '4.5m x 4.5m',
@@ -204,7 +215,7 @@ export default function Products() {
       name: 'Horizontal Tank 1000L',
       category: 'horizontal',
       capacity: '1000L',
-      price: 'KSh 4,500',
+      price: 'KSh 5,500',
       image: '/assets/horizontal (2).jpeg',
       description: 'Space-saving horizontal design',
       dimensions: '1.5m x 0.9m',
@@ -214,7 +225,7 @@ export default function Products() {
       name: 'Horizontal Tank 2000L',
       category: 'horizontal',
       capacity: '2000L',
-      price: 'KSh 9,200',
+      price: 'KSh 10,500',
       image: '/assets/horizontal (2).jpeg',
       description: 'Medium horizontal tank',
       dimensions: '2.5m x 1.2m',
@@ -224,7 +235,7 @@ export default function Products() {
       name: 'Horizontal Tank 3000L',
       category: 'horizontal',
       capacity: '3000L',
-      price: 'KSh 14,200',
+      price: 'KSh 14,500',
       image: '/assets/horizontal (2).jpeg',
       description: 'Large horizontal tank for limited height spaces',
       dimensions: '3.0m x 1.4m',
@@ -234,7 +245,7 @@ export default function Products() {
       name: 'Horizontal Tank 5000L',
       category: 'horizontal',
       capacity: '5000L',
-      price: 'KSh 24,500',
+      price: 'KSh 27,500',
       image: '/assets/horizontal (2).jpeg',
       description: 'Extra-large horizontal tank',
       dimensions: '4.0m x 1.5m',
@@ -245,7 +256,7 @@ export default function Products() {
       name: 'Loft Tank 100L',
       category: 'loft',
       capacity: '100L',
-      price: 'KSh 1,100',
+      price: 'KSh 1,500',
       image: '/assets/loft tank.jpeg',
       description: 'Compact loft tank for rooftop installation',
       dimensions: '0.5m x 0.6m',
@@ -255,7 +266,7 @@ export default function Products() {
       name: 'Loft Tank 250L',
       category: 'loft',
       capacity: '250L',
-      price: 'KSh 1,800',
+      price: 'KSh 2,200',
       image: '/assets/loft tank.jpeg',
       description: 'Small loft tank',
       dimensions: '0.6m x 0.8m',
@@ -265,7 +276,7 @@ export default function Products() {
       name: 'Loft Tank 500L',
       category: 'loft',
       capacity: '500L',
-      price: 'KSh 2,800',
+      price: 'KSh 3,200',
       image: '/assets/loft tank.jpeg',
       description: 'Standard loft tank for multi-story buildings',
       dimensions: '0.8m x 1.0m',
@@ -275,7 +286,7 @@ export default function Products() {
       name: 'Loft Tank 1000L',
       category: 'loft',
       capacity: '1000L',
-      price: 'KSh 4,500',
+      price: 'KSh 5,500',
       image: '/assets/loft tank.jpeg',
       description: 'Large loft tank for buildings',
       dimensions: '1.0m x 1.2m',
@@ -286,7 +297,7 @@ export default function Products() {
       name: 'Underground Tank 3000L',
       category: 'underground',
       capacity: '3000L',
-      price: 'KSh 14,200',
+      price: 'KSh 14,500',
       image: '/assets/under ground.jpeg',
       description: 'Durable underground tank for rainwater harvesting',
       dimensions: '1.5m x 1.8m',
@@ -296,7 +307,7 @@ export default function Products() {
       name: 'Underground Tank 5000L',
       category: 'underground',
       capacity: '5000L',
-      price: 'KSh 24,500',
+      price: 'KSh 27,500',
       image: '/assets/under ground.jpeg',
       description: 'Large capacity underground storage',
       dimensions: '2.0m x 2.0m',
@@ -306,7 +317,7 @@ export default function Products() {
       name: 'Underground Tank 10000L',
       category: 'underground',
       capacity: '10000L',
-      price: 'KSh 49,000',
+      price: 'KSh 51,000',
       image: '/assets/under ground.jpeg',
       description: 'Extra-large underground storage',
       dimensions: '2.5m x 2.5m',
@@ -317,7 +328,7 @@ export default function Products() {
       name: 'Septic Tank 3000L',
       category: 'septic',
       capacity: '3000L',
-      price: 'KSh 14,200',
+      price: 'KSh 14,500',
       image: '/assets/Septic Tank.jpeg',
       description: 'Heavy-duty septic tank for waste management',
       dimensions: '2.0m x 1.8m',
@@ -327,7 +338,7 @@ export default function Products() {
       name: 'Septic Tank 5000L',
       category: 'septic',
       capacity: '5000L',
-      price: 'KSh 24,500',
+      price: 'KSh 27,500',
       image: '/assets/Septic Tank.jpeg',
       description: 'Large septic tank for commercial properties',
       dimensions: '2.5m x 2.2m',
@@ -370,15 +381,17 @@ export default function Products() {
             <Filter className="w-5 h-5 text-navy-900" />
             <span className="font-semibold text-navy-900">Filter by Category:</span>
           </div>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3" role="group" aria-label="Product categories">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-6 py-3 rounded-lg font-medium transition-all ${selectedCategory === category.id
+                className={`px-6 py-3 rounded-lg font-medium transition-all focus:outline-none focus:ring-2 focus:ring-orange-500 ${selectedCategory === category.id
                   ? 'bg-orange-500 text-white shadow-lg'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
+                aria-pressed={selectedCategory === category.id}
+                aria-label={`Filter by ${category.name}`}
               >
                 {category.name}
               </button>
@@ -398,13 +411,26 @@ export default function Products() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 }}
               >
-                <Card className="h-full flex flex-col">
+                <Card className="h-full flex flex-col overflow-hidden group">
                   <div className="relative h-56 overflow-hidden">
-                    <img
+                    <Image
                       src={product.image}
                       alt={product.name}
-                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-110"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      quality={80}
                     />
+                    <div className="absolute top-4 left-4 flex flex-col gap-2">
+                      <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
+                        <CheckCircle className="w-3 h-3" />
+                        In Stock
+                      </span>
+                      <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
+                        <Truck className="w-3 h-3" />
+                        Free Delivery
+                      </span>
+                    </div>
                     <div className="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                       {product.capacity}
                     </div>
@@ -416,18 +442,21 @@ export default function Products() {
                       <p className="text-sm text-gray-500">Dimensions: {product.dimensions}</p>
                     </div>
                     <p className="text-2xl font-bold text-orange-500 mb-4">{product.price}</p>
-                    <div className="flex gap-2">
+                    <div className="flex flex-col gap-2">
                       <Button
                         variant="primary"
-                        className="flex-1"
-                        onClick={() => addToCart(product)}
+                        className="w-full"
+                        onClick={() => handleAddToCart(product)}
+                        aria-label={`Add ${product.name} to cart`}
                       >
-                        <Plus className="w-4 h-4" />
+                        <ShoppingCart className="w-4 h-4 mr-2" />
                         Add to Cart
                       </Button>
-                      <Link href={`/products/${product.id}`}>
-                        <Button variant="outline">Details</Button>
-                      </Link>
+                      <div className="flex gap-2">
+                        <Link href={`/products/${product.id}`} className="flex-1">
+                          <Button variant="outline" className="w-full" aria-label={`View details for ${product.name}`}>Details</Button>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </Card>

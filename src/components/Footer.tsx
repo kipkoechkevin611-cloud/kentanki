@@ -18,12 +18,12 @@ const Footer = () => {
       { href: '/about', label: 'About Us' },
       { href: '/about', label: 'Our History' },
       { href: '/contact', label: 'Contact' },
-      { href: '/about', label: 'Careers' },
-      { href: '/about', label: 'Blog' },
+      { href: '/privacy', label: 'Privacy Policy' },
+      { href: '/terms', label: 'Terms of Service' },
     ],
     support: [
+      { href: '/delivery', label: 'Delivery Policy' },
       { href: '/contact', label: 'Get a Quote' },
-      { href: '/contact', label: 'Delivery Info' },
       { href: '/contact', label: 'Installation' },
       { href: '/contact', label: 'FAQs' },
       { href: '/contact', label: 'Support' },
@@ -83,7 +83,7 @@ const Footer = () => {
               <Phone className="w-5 h-5 text-orange-500 mt-1" />
               <div>
                 <p className="font-semibold">Call Us</p>
-                <p className="text-gray-400">+254 740 272 542</p>
+                <p className="text-gray-400">+254 736 010 873</p>
               </div>
             </div>
             <div className="flex items-start gap-3">

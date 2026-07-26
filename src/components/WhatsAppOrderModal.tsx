@@ -93,7 +93,7 @@ ${formData.additionalNotes ? `• Notes: ${formData.additionalNotes}` : ''}
               <p className="font-semibold mb-1">Order Benefits:</p>
               <ul className="space-y-1">
                 <li>• Free countrywide delivery</li>
-                <li>• 25-year manufacturer warranty</li>
+                <li>• 15-year manufacturer warranty</li>
                 <li>• Genuine Rototank products</li>
                 <li>• Professional installation available</li>
               </ul>

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { X, Plus, Minus, Trash2, ShoppingBag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import Modal from './ui/Modal';
+import Image from 'next/image';
 
 const CartModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const { cart, removeFromCart, updateQuantity, cartTotal, clearCart } = useCart();
@@ -34,11 +35,16 @@ const CartModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
         <div className="space-y-4">
           {cart.map((item) => (
             <div key={item.id} className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-20 h-20 object-cover rounded-lg"
-              />
+              <div className="relative w-20 h-20">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  className="object-cover rounded-lg"
+                  sizes="80px"
+                  quality={75}
+                />
+              </div>
               <div className="flex-1">
                 <h4 className="font-semibold text-navy-900">{item.name}</h4>
                 <p className="text-sm text-gray-600">{item.capacity}</p>

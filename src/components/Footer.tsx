@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Clock } from 'lucide-react';
 
@@ -36,8 +37,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">K</span>
+              <div className="relative w-12 h-12">
+                <Image
+                  src="/assets/logo.jpeg"
+                  alt="Kentank Logo"
+                  fill
+                  className="object-contain"
+                  sizes="48px"
+                  quality={90}
+                />
               </div>
               <span className="font-bold text-2xl">Kentank</span>
             </div>

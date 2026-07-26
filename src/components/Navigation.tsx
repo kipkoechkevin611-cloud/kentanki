@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, ShoppingCart } from 'lucide-react';
 import Button from './ui/Button';
@@ -39,8 +40,15 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">K</span>
+            <div className="relative w-12 h-12">
+              <Image
+                src="/assets/logo.jpeg"
+                alt="Kentank Logo"
+                fill
+                className="object-contain"
+                sizes="48px"
+                quality={90}
+              />
             </div>
             <span className="text-white font-bold text-2xl">Kentank</span>
           </Link>

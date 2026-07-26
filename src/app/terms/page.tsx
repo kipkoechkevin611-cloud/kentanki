@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
@@ -40,7 +42,7 @@ export default function TermsOfService() {
                 Acceptance of Terms
               </h2>
               <p className="text-gray-600">
-                By accessing or using Kentank's website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+                By accessing or using Kentank&apos;s website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
               </p>
             </div>
 

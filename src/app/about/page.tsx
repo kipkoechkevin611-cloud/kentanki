@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
+import Image from 'next/image';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
 import {
@@ -158,11 +159,16 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <img
-                src="https://images.unsplash.com/photo-1581092921461-eab62e97a782?w=800"
-                alt="Manufacturing facility"
-                className="rounded-2xl shadow-2xl"
-              />
+              <div className="relative h-96 w-full">
+                <Image
+                  src="https://images.unsplash.com/photo-1581092921461-eab62e97a782?w=800"
+                  alt="Manufacturing facility"
+                  fill
+                  className="rounded-2xl shadow-2xl object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={80}
+                />
+              </div>
             </motion.div>
 
             <motion.div
@@ -337,11 +343,16 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800"
-                alt="Manufacturing process"
-                className="rounded-2xl shadow-2xl"
-              />
+              <div className="relative h-96 w-full">
+                <Image
+                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800"
+                  alt="Manufacturing process"
+                  fill
+                  className="rounded-2xl shadow-2xl object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={80}
+                />
+              </div>
             </motion.div>
           </div>
         </div>

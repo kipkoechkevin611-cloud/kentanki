@@ -68,8 +68,8 @@ ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
       ) : (
         <div className="space-y-4">
           {cart.map((item) => (
-            <div key={item.id} className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
-              <div className="relative w-20 h-20">
+            <div key={item.id} className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-gray-50 rounded-lg">
+              <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
                 <Image
                   src={item.image}
                   alt={item.name}
@@ -79,32 +79,34 @@ ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
                   quality={75}
                 />
               </div>
-              <div className="flex-1">
-                <h4 className="font-semibold text-navy-900">{item.name}</h4>
-                <p className="text-sm text-gray-600">{item.capacity}</p>
-                <p className="text-orange-500 font-bold">{item.price}</p>
+              <div className="flex-1 w-full min-w-0">
+                <h4 className="font-semibold text-navy-900 text-sm sm:text-base truncate">{item.name}</h4>
+                <p className="text-xs sm:text-sm text-gray-600">{item.capacity}</p>
+                <p className="text-orange-500 font-bold text-sm sm:text-base">{item.price}</p>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-start">
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center"
+                  >
+                    <Minus className="w-3 h-3 sm:w-4 sm:h-4" />
+                  </button>
+                  <span className="w-6 sm:w-8 text-center font-semibold text-sm sm:text-base">{item.quantity}</span>
+                  <button
+                    onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center"
+                  >
+                    <Plus className="w-3 h-3 sm:w-4 sm:h-4" />
+                  </button>
+                </div>
                 <button
-                  onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                  className="w-8 h-8 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center"
+                  onClick={() => removeFromCart(item.id)}
+                  className="text-red-500 hover:text-red-600"
                 >
-                  <Minus className="w-4 h-4" />
-                </button>
-                <span className="w-8 text-center font-semibold">{item.quantity}</span>
-                <button
-                  onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                  className="w-8 h-8 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center"
-                >
-                  <Plus className="w-4 h-4" />
+                  <Trash2 className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
               </div>
-              <button
-                onClick={() => removeFromCart(item.id)}
-                className="text-red-500 hover:text-red-600"
-              >
-                <Trash2 className="w-5 h-5" />
-              </button>
             </div>
           ))}
           <div className="border-t pt-4">
@@ -116,10 +118,10 @@ ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
             </div>
             <div className="space-y-2">
               {showCheckoutForm ? (
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      <User className="w-4 h-4 inline mr-1" />
+                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
+                      <User className="w-3 h-3 sm:w-4 sm:h-4 inline mr-1" />
                       Full Name *
                     </label>
                     <input
@@ -127,14 +129,14 @@ ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
+                      className={`w-full px-3 sm:px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
                       placeholder="Enter your full name"
                     />
-                    {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+                    {errors.name && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.name}</p>}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      <PhoneIcon className="w-4 h-4 inline mr-1" />
+                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
+                      <PhoneIcon className="w-3 h-3 sm:w-4 sm:h-4 inline mr-1" />
                       Phone Number *
                     </label>
                     <input
@@ -142,14 +144,14 @@ ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
+                      className={`w-full px-3 sm:px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
                       placeholder="07XXXXXXXX"
                     />
-                    {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+                    {errors.phone && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.phone}</p>}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      <MapPin className="w-4 h-4 inline mr-1" />
+                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
+                      <MapPin className="w-3 h-3 sm:w-4 sm:h-4 inline mr-1" />
                       Delivery Location *
                     </label>
                     <input
@@ -157,35 +159,35 @@ ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
                       name="location"
                       value={formData.location}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 ${errors.location ? 'border-red-500' : 'border-gray-300'}`}
+                      className={`w-full px-3 sm:px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base ${errors.location ? 'border-red-500' : 'border-gray-300'}`}
                       placeholder="City, County, Address"
                     />
-                    {errors.location && <p className="text-red-500 text-sm mt-1">{errors.location}</p>}
+                    {errors.location && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.location}</p>}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                       Additional Notes (Optional)
                     </label>
                     <textarea
                       name="notes"
                       value={formData.notes}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                      className="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                       rows={2}
                       placeholder="Any special instructions..."
                     />
                   </div>
                   <button
                     onClick={() => setShowCheckoutForm(false)}
-                    className="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 rounded-lg transition-colors"
+                    className="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 sm:py-3 rounded-lg transition-colors text-sm sm:text-base"
                   >
                     Back to Cart
                   </button>
                   <button
                     onClick={handleWhatsAppCheckout}
-                    className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors"
+                    className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-colors text-sm sm:text-base"
                   >
-                    <ShoppingBag className="w-5 h-5" />
+                    <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
                     Complete Order via WhatsApp
                   </button>
                 </div>
@@ -193,14 +195,14 @@ ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
                 <>
                   <button
                     onClick={() => setShowCheckoutForm(true)}
-                    className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors"
+                    className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-colors text-sm sm:text-base"
                   >
-                    <ShoppingBag className="w-5 h-5" />
+                    <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
                     Checkout via WhatsApp
                   </button>
                   <button
                     onClick={clearCart}
-                    className="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-3 rounded-lg transition-colors"
+                    className="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 sm:py-3 rounded-lg transition-colors text-sm sm:text-base"
                   >
                     Clear Cart
                   </button>

@@ -229,7 +229,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {products.map((product, index) => (
               <motion.div
                 key={product.id}
@@ -239,33 +239,33 @@ export default function Home() {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card>
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-48 overflow-hidden">
                     <Image
                       src={product.image}
                       alt={product.name}
                       fill
                       className="object-cover transition-transform duration-300 hover:scale-110"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       quality={80}
                     />
-                    <div className="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    <div className="absolute top-3 right-3 bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
                       {product.capacity}
                     </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-navy-900 mb-2">{product.name}</h3>
-                    <p className="text-gray-600 mb-4">{product.description}</p>
-                    <p className="text-2xl font-bold text-orange-500 mb-4">{product.price}</p>
-                    <div className="flex gap-3">
+                  <div className="p-4">
+                    <h3 className="text-lg font-bold text-navy-900 mb-1">{product.name}</h3>
+                    <p className="text-sm text-gray-600 mb-3">{product.description}</p>
+                    <p className="text-xl font-bold text-orange-500 mb-3">{product.price}</p>
+                    <div className="flex gap-2">
                       <Button
                         variant="primary"
-                        className="flex-1"
+                        className="flex-1 text-sm py-2"
                         onClick={() => setIsOrderModalOpen(true)}
                       >
                         Order Now
                       </Button>
                       <Link href="/products">
-                        <Button variant="outline">Details</Button>
+                        <Button variant="outline" className="text-sm py-2 px-3">Details</Button>
                       </Link>
                     </div>
                   </div>

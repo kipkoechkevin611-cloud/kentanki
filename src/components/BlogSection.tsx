@@ -14,7 +14,7 @@ const BlogSection: React.FC = () => {
       excerpt: 'Learn about the factors to consider when selecting a water tank for your home or business, including capacity, material, and installation requirements.',
       date: 'January 15, 2026',
       readTime: '5 min read',
-      image: '/images/blog/how-to-choose-water-tank.webp',
+      image: '/assets/vertical (2).jpeg',
       category: 'Guide',
     },
     {
@@ -23,7 +23,7 @@ const BlogSection: React.FC = () => {
       excerpt: 'Understanding different water tank capacities and which size is best suited for your household needs, from small 500L tanks to large 10,000L tanks.',
       date: 'January 10, 2026',
       readTime: '4 min read',
-      image: '/images/blog/water-tank-sizes.webp',
+      image: '/assets/horizontal (2).jpeg',
       category: 'Education',
     },
     {
@@ -32,7 +32,7 @@ const BlogSection: React.FC = () => {
       excerpt: 'Essential tips for keeping your water tank clean and in optimal condition, including regular cleaning schedules and maintenance best practices.',
       date: 'January 5, 2026',
       readTime: '6 min read',
-      image: '/images/blog/water-tank-maintenance.webp',
+      image: '/assets/vertical (2).jpeg',
       category: 'Maintenance',
     },
     {
@@ -41,7 +41,7 @@ const BlogSection: React.FC = () => {
       excerpt: 'Discover why food-grade plastic water tanks are essential for storing drinking water safely and the health benefits they provide.',
       date: 'December 28, 2025',
       readTime: '5 min read',
-      image: '/images/blog/benefits-food-grade-tanks.webp',
+      image: '/assets/vertical (2).jpeg',
       category: 'Health',
     },
   ];

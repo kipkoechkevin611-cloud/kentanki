@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import WhatsAppOrderModal from '../../components/WhatsAppOrderModal';
+import DeliveryEstimator from '../../components/DeliveryEstimator';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
 import { ShoppingCart, Filter, ArrowRight, Plus, Phone, MessageCircle, CheckCircle, Truck, Search, X } from 'lucide-react';
@@ -461,6 +462,20 @@ export default function Products() {
               Found {searchedProducts.length} of {filteredProducts.length} products
             </p>
           )}
+        </div>
+      </section>
+
+      {/* Delivery Estimator */}
+      <section className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-2xl mx-auto"
+          >
+            <DeliveryEstimator />
+          </motion.div>
         </div>
       </section>
 

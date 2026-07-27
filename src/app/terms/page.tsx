@@ -52,7 +52,7 @@ export default function TermsOfService() {
                 Products and Services
               </h2>
               <p className="text-gray-600 mb-4">
-                We offer genuine Rototank water tanks and related products. All products are:
+                We offer genuine Kentank water tanks and related products. All products are:
               </p>
               <ul className="list-disc list-inside text-gray-600 space-y-2">
                 <li>KEBS certified for quality assurance</li>
@@ -96,7 +96,7 @@ export default function TermsOfService() {
                 Warranty and Returns
               </h2>
               <p className="text-gray-600 mb-4">
-                All Rototank products come with a 25-year manufacturer warranty covering:
+                All Kentank products come with a 25-year manufacturer warranty covering:
               </p>
               <ul className="list-disc list-inside text-gray-600 space-y-2">
                 <li>Manufacturing defects</li>

@@ -46,7 +46,7 @@ const Chatbot = () => {
     }
 
     if (lowerMessage.includes('warranty') || lowerMessage.includes('guarantee')) {
-      return "All our Rototank water tanks come with a 15-year manufacturer warranty. This covers manufacturing defects, UV degradation, and material failures under normal use. This is the longest warranty in the industry!";
+      return "All our Kentank water tanks come with a 15-year manufacturer warranty. This covers manufacturing defects, UV degradation, and material failures under normal use. This is the longest warranty in the industry!";
     }
 
     if (lowerMessage.includes('size') || lowerMessage.includes('capacity') || lowerMessage.includes('liter')) {
@@ -78,7 +78,7 @@ const Chatbot = () => {
     }
 
     if (lowerMessage.includes('about') || lowerMessage.includes('company') || lowerMessage.includes('kentank')) {
-      return "Kentank is Kenya's #1 water tank supplier. We specialize in genuine Rototank water tanks with free countrywide delivery, 15-year warranty, and KEBS certification. We've served thousands of customers across all 47 counties.";
+      return "Kentank is Kenya's #1 water tank supplier. We specialize in genuine Kentank water tanks with free countrywide delivery, 15-year warranty, and KEBS certification. We've served thousands of customers across all 47 counties.";
     }
 
     if (lowerMessage.includes('location') || lowerMessage.includes('where') || lowerMessage.includes('address')) {

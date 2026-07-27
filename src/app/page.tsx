@@ -145,8 +145,8 @@ export default function Home() {
   const whyChooseUs = [
     {
       icon: Shield,
-      title: 'Genuine Rototank Products',
-      description: '100% authentic Rototank water tanks with manufacturer warranty',
+      title: 'Genuine Kentank Products',
+      description: '100% authentic Kentank water tanks with manufacturer warranty',
     },
     {
       icon: Truck,
@@ -220,7 +220,7 @@ export default function Home() {
               Premium Water Storage Solutions
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-200 mb-6 md:mb-8 leading-relaxed max-w-3xl">
-              Genuine Rototank water tanks with free countrywide delivery. From 500L to 24,000L for homes, farms, and industries.
+              Genuine Kentank water tanks with free countrywide delivery. From 500L to 24,000L for homes, farms, and industries.
             </p>
             
             <div className="flex flex-wrap gap-3 md:gap-4 mb-8 md:mb-12">

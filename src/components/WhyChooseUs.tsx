@@ -9,7 +9,7 @@ const WhyChooseUs: React.FC = () => {
     {
       icon: Shield,
       title: 'Genuine Water Tanks',
-      description: '100% authentic Rototank products with manufacturer warranty',
+      description: '100% authentic Kentank products with manufacturer warranty',
       color: 'bg-blue-100 text-blue-600',
     },
     {

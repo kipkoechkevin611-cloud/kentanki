@@ -21,7 +21,7 @@ const TrustBadges: React.FC = () => {
     {
       icon: CheckCircle,
       title: '100% Authentic',
-      description: 'Genuine Rototank products guaranteed',
+      description: 'Genuine Kentank products guaranteed',
       color: 'bg-orange-100 text-orange-600',
     },
     {

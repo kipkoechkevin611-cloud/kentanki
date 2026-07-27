@@ -8,9 +8,9 @@ import { CartProvider } from "../context/CartContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Rototank Water Tanks Kenya | Premium Water Storage Solutions",
-  description: "Genuine Rototank water tanks for homes, farms, and industries. Free countrywide delivery, 15-year warranty, KEBS certified. Prices from KSh 5,500 for 1000L tanks.",
-  keywords: "Rototank Kenya, water tanks Kenya, plastic tanks, water storage tanks, septic tanks Kenya, underground tanks, tank suppliers Kenya, free delivery water tanks",
+  title: "Kentank Water Tanks Kenya | Premium Water Storage Solutions",
+  description: "Genuine Kentank water tanks for homes, farms, and industries. Free countrywide delivery, 15-year warranty, KEBS certified. Prices from KSh 5,500 for 1000L tanks.",
+  keywords: "Kentank Kenya, water tanks Kenya, plastic tanks, water storage tanks, septic tanks Kenya, underground tanks, tank suppliers Kenya, free delivery water tanks",
   authors: [{ name: "Kentank Kenya" }],
   creator: "Kentank Kenya",
   publisher: "Kentank Kenya",
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://kentank.co.ke'),
   openGraph: {
-    title: "Rototank Water Tanks Kenya | Premium Water Storage Solutions",
-    description: "Genuine Rototank water tanks with free countrywide delivery, 15-year warranty, and KEBS certification. Order now!",
+    title: "Kentank Water Tanks Kenya | Premium Water Storage Solutions",
+    description: "Genuine Kentank water tanks with free countrywide delivery, 15-year warranty, and KEBS certification. Order now!",
     url: 'https://kentank.co.ke',
     siteName: 'Kentank Kenya',
     locale: 'en_KE',
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Rototank Water Tanks Kenya | Premium Water Storage Solutions",
-    description: "Genuine Rototank water tanks with free countrywide delivery, 15-year warranty, and KEBS certification.",
+    title: "Kentank Water Tanks Kenya | Premium Water Storage Solutions",
+    description: "Genuine Kentank water tanks with free countrywide delivery, 15-year warranty, and KEBS certification.",
     creator: '@kentankkenya',
   },
   robots: {
@@ -58,8 +58,8 @@ export default function RootLayout({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'Kentank Kenya - Rototank Water Tanks',
-    description: 'Genuine Rototank water tanks for homes, farms, and industries. Free countrywide delivery, 15-year warranty, KEBS certified.',
+    name: 'Kentank Kenya - Kentank Water Tanks',
+    description: 'Genuine Kentank water tanks for homes, farms, and industries. Free countrywide delivery, 15-year warranty, KEBS certified.',
     url: 'https://kentank.co.ke',
     telephone: '+254736010873',
     email: 'info@kentank.co.ke',
@@ -158,7 +158,7 @@ export default function RootLayout({
     name: 'Kentank Kenya',
     url: 'https://kentank.co.ke',
     logo: 'https://kentank.co.ke/assets/logo.jpeg',
-    description: 'Leading supplier of genuine Rototank water tanks in Kenya',
+    description: 'Leading supplier of genuine Kentank water tanks in Kenya',
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+254736010873',

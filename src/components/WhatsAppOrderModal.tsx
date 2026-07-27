@@ -59,7 +59,7 @@ const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ isOpen, onClose
     }
 
     const message = `
-🌊 *ROTOTANK WATER TANK ORDER*
+🌊 *KENTANK WATER TANK ORDER*
 
 👤 *Customer Details:*
 • Name: ${formData.name}
@@ -94,7 +94,7 @@ ${formData.additionalNotes ? `• Notes: ${formData.additionalNotes}` : ''}
               <ul className="space-y-1">
                 <li>• Free countrywide delivery</li>
                 <li>• 15-year manufacturer warranty</li>
-                <li>• Genuine Rototank products</li>
+                <li>• Genuine Kentank products</li>
                 <li>• Professional installation available</li>
               </ul>
             </div>

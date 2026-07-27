@@ -21,7 +21,7 @@ const HeroSlideshow = () => {
     {
       image: '/assets/vertical (2).jpeg',
       title: 'Kentank Premium Water Tanks',
-      subtitle: 'Genuine Rototank water storage solutions with FREE countrywide delivery',
+      subtitle: 'Genuine Kentank water storage solutions with FREE countrywide delivery',
       badge: 'FREE DELIVERY',
       cta: 'Shop Now',
     },
@@ -35,7 +35,7 @@ const HeroSlideshow = () => {
     {
       image: '/assets/loft tank.jpeg',
       title: '25-Year Warranty',
-      subtitle: 'Industry-leading warranty on all Rototank products',
+      subtitle: 'Industry-leading warranty on all Kentank products',
       badge: 'WARRANTY',
       cta: 'Learn More',
     },

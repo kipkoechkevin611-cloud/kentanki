@@ -40,7 +40,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
     capacity: '5000L',
     originalPrice: 35000,
     salePrice: 27500,
-    description: 'Premium quality Rototank vertical water tank designed for durability and longevity. Perfect for residential homes, small businesses, and agricultural use. Made from food-grade polyethylene material that is UV resistant and corrosion-free.',
+    description: 'Premium quality Kentank vertical water tank designed for durability and longevity. Perfect for residential homes, small businesses, and agricultural use. Made from food-grade polyethylene material that is UV resistant and corrosion-free.',
     images: [
       '/assets/vertical (2).jpeg',
       '/assets/vertical (2).jpeg',
@@ -93,7 +93,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
         id: 2,
         name: 'Mary Wanjiku',
         rating: 5,
-        text: 'Best investment for my home. The tank is sturdy and looks great. Genuine Rototank quality.',
+        text: 'Best investment for my home. The tank is sturdy and looks great. Genuine Kentank quality.',
         date: '1 month ago',
       },
       {
@@ -107,7 +107,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
     faqs: [
       {
         question: 'What is the warranty period for this tank?',
-        answer: 'All Rototank products come with a 25-year warranty against manufacturing defects and UV degradation.',
+        answer: 'All Kentank products come with a 25-year warranty against manufacturing defects and UV degradation.',
       },
       {
         question: 'Is the tank suitable for drinking water?',

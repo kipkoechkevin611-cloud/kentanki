@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import Chatbot from "../components/Chatbot";
 import CategoryNavigation from "../components/CategoryNavigation";
 import CartToastWrapper from "../components/CartToastWrapper";
@@ -196,7 +195,6 @@ export default function RootLayout({
             {children}
           </div>
           <CartToastWrapper />
-          <FloatingWhatsApp />
           <Chatbot />
         </CartProvider>
       </body>

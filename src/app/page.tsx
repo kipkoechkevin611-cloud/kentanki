@@ -179,20 +179,25 @@ export default function Home() {
     <main className="min-h-screen">
       <Navigation />
 
-      {/* Hero Section - Clean & Clear */}
-      <section className="relative h-[calc(100vh-80px)] min-h-[600px] md:min-h-[700px] bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 overflow-hidden">
+      {/* Hero Section - Amazing Design */}
+      <section className="relative h-[calc(100vh-80px)] min-h-[700px] md:min-h-[800px] bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/assets/vertical (2).jpeg"
             alt="Kentank Water Tanks"
             fill
-            className="object-cover opacity-20"
+            className="object-cover opacity-15"
             priority
             quality={80}
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-900/70 to-navy-900/90" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-900/95 via-navy-900/80 to-navy-900/95" />
         </div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute top-20 right-20 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+        
         <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -200,26 +205,77 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl w-full"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
-              Premium Water Storage Solutions in Kenya
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="inline-block mb-6"
+            >
+              <span className="bg-orange-500/20 text-orange-400 px-4 py-2 rounded-full text-sm font-semibold border border-orange-500/30">
+                🇰🇪 Kenya's #1 Water Tank Supplier
+              </span>
+            </motion.div>
+            
+            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 leading-tight">
+              Premium Water Storage Solutions
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-3xl">
+            <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl">
               Genuine Rototank water tanks with free countrywide delivery. From 500L to 24,000L for homes, farms, and industries.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Link href="/products" className="flex-1 sm:flex-none">
-                <Button variant="primary" size="lg" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white text-lg py-4 px-8 shadow-lg hover:shadow-xl transition-all">
+            
+            <div className="flex flex-wrap gap-4 mb-12">
+              <Link href="/products" className="flex-1 sm:flex-none min-w-[200px]">
+                <Button variant="primary" size="lg" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white text-lg py-4 px-8 shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
                   Browse Products
                 </Button>
               </Link>
               <a
+                href="https://wa.me/254736010873"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 sm:flex-none min-w-[200px] inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white text-lg font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Order via WhatsApp
+              </a>
+              <a
                 href="tel:+254736010873"
-                className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-navy-900 text-lg font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all cursor-pointer"
+                className="flex-1 sm:flex-none min-w-[200px] inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-navy-900 text-lg font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer"
               >
                 <Phone className="w-5 h-5" />
-                Call +254 736 010 873
+                Call Us
               </a>
             </div>
+            
+            {/* Trust Indicators */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex flex-wrap gap-6 items-center"
+            >
+              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-5 py-3 rounded-xl border border-white/20">
+                <Shield className="w-6 h-6 text-green-400" />
+                <div>
+                  <p className="font-bold text-white text-base">15-Year Warranty</p>
+                  <p className="text-xs text-gray-300">Industry-leading</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-5 py-3 rounded-xl border border-white/20">
+                <Award className="w-6 h-6 text-blue-400" />
+                <div>
+                  <p className="font-bold text-white text-base">KEBS Certified</p>
+                  <p className="text-xs text-gray-300">Quality assured</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-5 py-3 rounded-xl border border-white/20">
+                <Truck className="w-6 h-6 text-orange-400" />
+                <div>
+                  <p className="font-bold text-white text-base">Free Delivery</p>
+                  <p className="text-xs text-gray-300">Countrywide</p>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

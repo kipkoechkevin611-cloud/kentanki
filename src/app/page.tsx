@@ -240,10 +240,10 @@ export default function Home() {
               </a>
               <a
                 href="tel:+254736010873"
-                className="flex-1 sm:flex-none min-w-[200px] inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-navy-900 text-lg font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer"
+                className="flex-1 sm:flex-none min-w-[200px] inline-flex items-center justify-center gap-2 bg-white text-navy-900 hover:bg-gray-100 text-lg font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer"
               >
-                <Phone className="w-5 h-5" />
-                Call Us
+                <Phone className="w-5 h-5 text-orange-500" />
+                +254 736 010 873
               </a>
             </div>
             
@@ -313,8 +313,8 @@ export default function Home() {
           >
             <h2 className="text-2xl md:text-3xl font-bold text-navy-900">Featured Products</h2>
             <Link href="/products">
-              <button className="inline-flex items-center gap-2 text-orange-500 hover:text-orange-600 font-semibold text-sm transition-colors">
-                View All
+              <button className="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors">
+                View All Products
                 <ArrowRight className="w-4 h-4" />
               </button>
             </Link>

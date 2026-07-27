@@ -3,8 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import Chatbot from "../components/Chatbot";
-import FreeDeliveryBanner from "../components/FreeDeliveryBanner";
-import TopAnnouncementBar from "../components/TopAnnouncementBar";
 import CategoryNavigation from "../components/CategoryNavigation";
 import CartToastWrapper from "../components/CartToastWrapper";
 import { CartProvider } from "../context/CartContext";
@@ -193,8 +191,6 @@ export default function RootLayout({
           Skip to main content
         </a>
         <CartProvider>
-          <TopAnnouncementBar />
-          <FreeDeliveryBanner />
           <CategoryNavigation />
           <div id="main-content">
             {children}

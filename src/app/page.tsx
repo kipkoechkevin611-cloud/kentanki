@@ -180,7 +180,7 @@ export default function Home() {
       <Navigation />
 
       {/* Hero Section - Amazing Design */}
-      <section className="relative h-[calc(100vh-80px)] min-h-[650px] md:min-h-[750px] bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 overflow-hidden">
+      <section className="relative h-[calc(100vh-80px)] min-h-[650px] md:min-h-[750px] bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 overflow-hidden mt-20">
         <div className="absolute inset-0">
           <Image
             src="/assets/vertical (2).jpeg"

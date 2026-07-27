@@ -8,6 +8,8 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import TankCalculator from '../components/TankCalculator';
 import WhatsAppOrderModal from '../components/WhatsAppOrderModal';
+import FAQ from '../components/FAQ';
+import TrustBadges from '../components/TrustBadges';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import {
@@ -83,18 +85,42 @@ export default function Home() {
       location: 'Nairobi',
       text: 'Excellent quality tanks! The delivery was fast and the installation team was professional. Highly recommended!',
       rating: 5,
+      date: '2 weeks ago',
     },
     {
       name: 'Mary Wanjiku',
       location: 'Mombasa',
       text: 'Best water tanks in Kenya. Have been using Kentank for 5 years now and never had any issues.',
       rating: 5,
+      date: '1 month ago',
     },
     {
       name: 'Peter Ochieng',
       location: 'Kisumu',
       text: 'Great customer service and durable products. The tank calculator helped me choose the right size.',
       rating: 5,
+      date: '3 weeks ago',
+    },
+    {
+      name: 'Grace Njoroge',
+      location: 'Nakuru',
+      text: 'Ordered a 5000L tank and it arrived within 3 days. The quality is outstanding and the price was very competitive.',
+      rating: 5,
+      date: '1 week ago',
+    },
+    {
+      name: 'David Kimani',
+      location: 'Eldoret',
+      text: 'Professional installation team and excellent after-sales support. Would definitely buy again.',
+      rating: 5,
+      date: '2 months ago',
+    },
+    {
+      name: 'Sarah Akinyi',
+      location: 'Thika',
+      text: 'The WhatsApp ordering process was so convenient. Got my tank delivered to my farm without any hassle.',
+      rating: 5,
+      date: '3 days ago',
     },
   ];
 
@@ -355,7 +381,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
@@ -364,20 +390,39 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="p-6 h-full">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-orange-500 fill-current" />
-                    ))}
+                <Card className="p-6 h-full hover:shadow-lg transition-shadow">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex gap-1">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 text-orange-500 fill-current" />
+                      ))}
+                    </div>
+                    <span className="text-xs text-gray-400">{testimonial.date}</span>
                   </div>
-                  <p className="text-gray-600 mb-4 italic">&quot;{testimonial.text}&quot;</p>
-                  <div>
-                    <p className="font-bold text-navy-900">{testimonial.name}</p>
-                    <p className="text-gray-500 text-sm">{testimonial.location}</p>
+                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">&quot;{testimonial.text}&quot;</p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                      <span className="text-orange-600 font-bold text-sm">{testimonial.name.charAt(0)}</span>
+                    </div>
+                    <div>
+                      <p className="font-bold text-navy-900 text-sm">{testimonial.name}</p>
+                      <p className="text-gray-500 text-xs flex items-center gap-1">
+                        <MapPin className="w-3 h-3" />
+                        {testimonial.location}
+                      </p>
+                    </div>
                   </div>
                 </Card>
               </motion.div>
             ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/products">
+              <Button variant="outline" size="lg">
+                View All Products
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -583,6 +628,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <TrustBadges />
+
+      <FAQ />
 
       <Footer />
 

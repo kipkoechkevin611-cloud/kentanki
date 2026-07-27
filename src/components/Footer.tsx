@@ -21,15 +21,22 @@ const Footer = () => {
       { href: '/contact', label: 'Contact' },
       { href: '/privacy', label: 'Privacy Policy' },
       { href: '/terms', label: 'Terms of Service' },
+      { href: '/delivery', label: 'Delivery Policy' },
     ],
     support: [
-      { href: '/delivery', label: 'Delivery Policy' },
       { href: '/contact', label: 'Get a Quote' },
       { href: '/contact', label: 'Installation' },
       { href: '/contact', label: 'FAQs' },
-      { href: '/contact', label: 'Support' },
+      { href: '/contact', label: 'Technical Support' },
+      { href: '/contact', label: 'Warranty Claims' },
     ],
   };
+
+  const paymentMethods = [
+    { name: 'M-Pesa', icon: '💳' },
+    { name: 'Bank Transfer', icon: '🏦' },
+    { name: 'Cash on Delivery', icon: '💵' },
+  ];
 
   return (
     <footer className="bg-navy-900 text-white">
@@ -102,17 +109,30 @@ const Footer = () => {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <Clock className="w-5 h-5 text-orange-500 mt-1" />
+              <MapPin className="w-5 h-5 text-orange-500 mt-1" />
               <div>
-                <p className="font-semibold">Working Hours</p>
-                <p className="text-gray-400">Mon - Sat: 8:00 AM - 6:00 PM</p>
+                <p className="font-semibold">Location</p>
+                <p className="text-gray-400">Nairobi, Kenya</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Kentank Kenya. All rights reserved.</p>
+        <div className="border-t border-white/10 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-gray-400 text-sm">
+              <p>&copy; 2024 Kentank Kenya. All rights reserved.</p>
+            </div>
+            <div className="flex items-center gap-4">
+              <span className="text-gray-400 text-sm">Payment Methods:</span>
+              {paymentMethods.map((method, index) => (
+                <div key={index} className="flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full">
+                  <span>{method.icon}</span>
+                  <span className="text-sm">{method.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </footer>

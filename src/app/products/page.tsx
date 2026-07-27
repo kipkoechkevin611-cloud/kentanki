@@ -9,13 +9,14 @@ import Footer from '../../components/Footer';
 import WhatsAppOrderModal from '../../components/WhatsAppOrderModal';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
-import { ShoppingCart, Filter, ArrowRight, Plus, Phone, MessageCircle, CheckCircle, Truck } from 'lucide-react';
+import { ShoppingCart, Filter, ArrowRight, Plus, Phone, MessageCircle, CheckCircle, Truck, Search, X } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 
 export default function Products() {
   const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedProduct, setSelectedProduct] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
   const { addToCart } = useCart();
 
   const handleAddToCart = (product: any) => {
@@ -379,6 +380,14 @@ export default function Products() {
     ? products
     : products.filter(p => p.category === selectedCategory);
 
+  const searchedProducts = searchQuery
+    ? filteredProducts.filter(p =>
+        p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        p.capacity.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        p.category.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : filteredProducts;
+
   const handleOrder = (productName: string) => {
     setSelectedProduct(productName);
     setIsOrderModalOpen(true);
@@ -404,19 +413,39 @@ export default function Products() {
         </div>
       </section>
 
-      {/* Category Filter */}
-      <section className="py-8 bg-white border-b">
+      {/* Category Filter & Search */}
+      <section className="py-8 bg-white border-b sticky top-20 z-30 bg-opacity-95 backdrop-blur-sm">
         <div className="container mx-auto px-4">
-          <div className="flex items-center gap-2 mb-4">
-            <Filter className="w-5 h-5 text-navy-900" />
-            <span className="font-semibold text-navy-900">Filter by Category:</span>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
+            <div className="flex items-center gap-2">
+              <Filter className="w-5 h-5 text-navy-900" />
+              <span className="font-semibold text-navy-900">Filter by Category:</span>
+            </div>
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search products..."
+                className="pl-10 pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 w-full md:w-64"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
+            </div>
           </div>
           <div className="flex flex-wrap gap-3" role="group" aria-label="Product categories">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-6 py-3 rounded-lg font-medium transition-all focus:outline-none focus:ring-2 focus:ring-orange-500 ${selectedCategory === category.id
+                className={`px-4 py-2 rounded-lg font-medium transition-all focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm ${selectedCategory === category.id
                   ? 'bg-orange-500 text-white shadow-lg'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
@@ -427,6 +456,11 @@ export default function Products() {
               </button>
             ))}
           </div>
+          {searchedProducts.length !== filteredProducts.length && (
+            <p className="mt-3 text-sm text-gray-600">
+              Found {searchedProducts.length} of {filteredProducts.length} products
+            </p>
+          )}
         </div>
       </section>
 
@@ -434,7 +468,7 @@ export default function Products() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-            {filteredProducts.map((product, index) => {
+            {searchedProducts.map((product, index) => {
               const savings = product.originalPrice - product.salePrice;
               return (
                 <motion.div
@@ -509,9 +543,15 @@ export default function Products() {
             })}
           </div>
 
-          {filteredProducts.length === 0 && (
-            <div className="text-center py-20">
-              <p className="text-gray-500 text-xl">No products found in this category.</p>
+          {searchedProducts.length === 0 && (
+            <div className="text-center py-20 col-span-full">
+              <p className="text-gray-500 text-xl">No products found matching your search.</p>
+              <button
+                onClick={() => setSearchQuery('')}
+                className="mt-4 text-orange-500 hover:text-orange-600 font-semibold"
+              >
+                Clear search
+              </button>
             </div>
           )}
         </div>

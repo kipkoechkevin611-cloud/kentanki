@@ -29,7 +29,7 @@ const OurProcess: React.FC = () => {
     {
       icon: Truck,
       title: 'Fast Delivery',
-      description: 'Get your tank delivered to your location within 3-7 business days',
+      description: 'Get your tank delivered to your location within 2-3 business days',
       step: '4',
     },
   ];

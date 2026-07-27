@@ -52,15 +52,15 @@ const Navigation = () => {
                 quality={90}
               />
             </div>
-            <span className="text-white font-bold text-2xl">Kentank</span>
+            <span className="text-white font-bold text-xl">Kentank</span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-white hover:text-orange-500 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-orange-500 rounded px-2 py-1"
+                className="text-white hover:text-orange-500 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-orange-500 rounded px-2 py-1 text-sm"
                 aria-label={`Navigate to ${link.label}`}
               >
                 {link.label}
@@ -69,10 +69,10 @@ const Navigation = () => {
             <Button 
               variant="outline" 
               size="sm" 
-              className="border-white text-white hover:bg-white hover:text-navy-900"
+              className="border-white text-white hover:bg-white hover:text-navy-900 text-xs py-2"
               aria-label="Call us"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-3 h-3 mr-1" />
               Call Us
             </Button>
             <button
@@ -80,14 +80,14 @@ const Navigation = () => {
               className="relative p-2 text-white hover:text-orange-500 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 rounded"
               aria-label={`Shopping cart${cartCount > 0 ? ` with ${cartCount} items` : ''}`}
             >
-              <ShoppingCart className="w-6 h-6" />
+              <ShoppingCart className="w-5 h-5" />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center" aria-hidden="true">
+                <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center" aria-hidden="true">
                   {cartCount}
                 </span>
               )}
             </button>
-            <Button variant="whatsapp" size="sm" aria-label="Order now via WhatsApp">
+            <Button variant="whatsapp" size="sm" className="text-xs py-2" aria-label="Order now via WhatsApp">
               Order Now
             </Button>
           </div>

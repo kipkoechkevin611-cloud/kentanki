@@ -277,20 +277,14 @@ export default function Home() {
         </div>
       </section>
 
-      <WhyChooseUs />
-
-      <CategoriesSection />
-
-      <ApplicationsSection />
-
       {/* Featured Products */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-8"
           >
             <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">Featured Products</h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
@@ -330,14 +324,6 @@ export default function Home() {
                         <span className="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">
                           SALE
                         </span>
-                        <span className="bg-green-500 text-white px-2 py-0.5 rounded-full text-xs font-semibold flex items-center gap-1">
-                          <CheckCircle className="w-2.5 h-2.5" />
-                          In Stock
-                        </span>
-                        <span className="bg-blue-500 text-white px-2 py-0.5 rounded-full text-xs font-semibold flex items-center gap-1">
-                          <Truck className="w-2.5 h-2.5" />
-                          Free Delivery
-                        </span>
                       </div>
                       <div className="absolute top-2 right-2 bg-orange-500 text-white px-2 py-0.5 rounded-full text-xs font-semibold">
                         {product.capacity}
@@ -362,8 +348,10 @@ export default function Home() {
                             <ShoppingCart className="w-3 h-3 mr-1" />
                             Add to Cart
                           </Button>
-                          <Link href="/products" className="flex-1">
-                            <Button variant="outline" className="w-full text-xs py-2.5">Details</Button>
+                          <Link href={`/products/${product.id}`} className="flex-1">
+                            <Button variant="outline" className="w-full text-xs py-2.5">
+                              Details
+                            </Button>
                           </Link>
                         </div>
                       </div>
@@ -373,43 +361,28 @@ export default function Home() {
               );
             })}
           </div>
-        </div>
-      </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mt-8"
           >
-            <h2 className="text-4xl font-bold text-navy-900 mb-4">Why Choose Kentank?</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              We&apos;re committed to providing the best water storage solutions in Kenya
-            </p>
+            <Link href="/products">
+              <button className="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-colors">
+                View All Products
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </Link>
           </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {whyChooseUs.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="p-6 text-center h-full">
-                  <item.icon className="w-16 h-16 text-orange-500 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-navy-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
+
+      <WhyChooseUs />
+
+      <CategoriesSection />
+
+      <ApplicationsSection />
 
       {/* Tank Calculator */}
       <TankCalculator />
@@ -574,7 +547,7 @@ export default function Home() {
                 },
                 {
                   title: 'Delivery',
-                  time: '3-7 business days total',
+                  time: '2-3 business days total',
                   description: 'Your tank arrives at your location with installation support',
                 },
               ].map((item, index) => (

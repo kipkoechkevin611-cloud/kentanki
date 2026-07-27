@@ -21,12 +21,12 @@ const FAQ: React.FC = () => {
     },
     {
       question: 'Do you offer free delivery?',
-      answer: 'Yes! We offer FREE countrywide delivery to all 47 counties in Kenya. Delivery typically takes 3-7 business days depending on your location.',
+      answer: 'Yes! We offer FREE countrywide delivery to all 47 counties in Kenya. Delivery typically takes 2-3 business days depending on your location.',
       icon: Truck,
     },
     {
       question: 'How long does delivery take?',
-      answer: 'Standard delivery takes 3-7 business days to most locations in Kenya. For remote areas, it may take up to 10 business days. We will contact you to confirm the delivery date.',
+      answer: 'Standard delivery takes 2-3 business days to most locations in Kenya. For remote areas, it may take up to 5 business days. We will contact you to confirm the delivery date.',
       icon: Clock,
     },
     {

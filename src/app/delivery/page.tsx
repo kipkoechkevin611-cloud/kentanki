@@ -77,7 +77,7 @@ export default function DeliveryPolicy() {
                   <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">4</div>
                   <div>
                     <h3 className="font-semibold text-navy-900">Delivery</h3>
-                    <p className="text-gray-600">3-7 business days total</p>
+                    <p className="text-gray-600">2-3 business days total</p>
                   </div>
                 </div>
               </div>

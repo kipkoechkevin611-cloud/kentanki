@@ -33,7 +33,7 @@ const TrustBadges: React.FC = () => {
     {
       icon: Clock,
       title: 'Fast Delivery',
-      description: '3-7 business days to most locations',
+      description: '2-3 business days to most locations',
       color: 'bg-red-100 text-red-600',
     },
     {

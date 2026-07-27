@@ -111,7 +111,7 @@ export default function TermsOfService() {
             <div>
               <h2 className="text-2xl font-bold text-navy-900 mb-4">Delivery Terms</h2>
               <p className="text-gray-600 mb-4">
-                <strong>Delivery Timeline:</strong> 3-7 business days to all 47 counties in Kenya.
+                <strong>Delivery Timeline:</strong> 2-3 business days to all 47 counties in Kenya.
               </p>
               <p className="text-gray-600 mb-4">
                 <strong>Delivery Responsibility:</strong> We deliver to your specified location. Customer is responsible for offloading and installation unless installation services are purchased.

@@ -19,12 +19,15 @@ interface CartContextType {
   clearCart: () => void;
   cartTotal: number;
   cartCount: number;
+  showCartToast: boolean;
+  setShowCartToast: (show: boolean) => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>([]);
+  const [showCartToast, setShowCartToast] = useState(false);
 
   const addToCart = (item: Omit<CartItem, 'quantity'>) => {
     setCart((prevCart) => {
@@ -38,6 +41,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       }
       return [...prevCart, { ...item, quantity: 1 }];
     });
+    setShowCartToast(true);
   };
 
   const removeFromCart = (id: number) => {
@@ -75,6 +79,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
         clearCart,
         cartTotal,
         cartCount,
+        showCartToast,
+        setShowCartToast,
       }}
     >
       {children}

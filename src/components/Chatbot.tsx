@@ -42,7 +42,7 @@ const Chatbot = () => {
     }
 
     if (lowerMessage.includes('delivery') || lowerMessage.includes('shipping') || lowerMessage.includes('deliver')) {
-      return "We offer FREE countrywide delivery to all 47 counties in Kenya! Delivery typically takes 3-7 business days. Our team will contact you to confirm the delivery date.";
+      return "We offer FREE countrywide delivery to all 47 counties in Kenya! Delivery typically takes 2-3 business days. Our team will contact you to confirm the delivery date.";
     }
 
     if (lowerMessage.includes('warranty') || lowerMessage.includes('guarantee')) {
@@ -224,7 +224,7 @@ const Chatbot = () => {
                       onChange={(e) => setInputValue(e.target.value)}
                       onKeyPress={handleKeyPress}
                       placeholder="Type your message..."
-                      className="flex-1 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm"
+                      className="flex-1 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 placeholder-gray-500 text-sm"
                     />
                     <button
                       onClick={handleSendMessage}

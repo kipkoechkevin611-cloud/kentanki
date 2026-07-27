@@ -66,7 +66,7 @@ const TankCalculator = () => {
                     type="number"
                     value={people}
                     onChange={(e) => setPeople(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 placeholder-gray-500"
                     placeholder="e.g., 5"
                   />
                 </div>

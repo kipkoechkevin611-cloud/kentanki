@@ -71,7 +71,7 @@ ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
   };
 
   const deliveryInfo = {
-    estimate: '3-7 Business Days',
+    estimate: '2-3 Business Days',
     cost: 'FREE',
     coverage: 'All 47 Counties',
   };
@@ -155,26 +155,26 @@ ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
                       <div className="flex items-center gap-2">
                         <button
                           onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border border-gray-300 hover:bg-gray-100 flex items-center justify-center transition-colors"
+                          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border-2 border-gray-800 hover:bg-gray-100 flex items-center justify-center transition-colors"
                           aria-label="Decrease quantity"
                         >
-                          <Minus className="w-3 h-3 sm:w-4 sm:h-4" />
+                          <Minus className="w-3 h-3 sm:w-4 sm:h-4 text-gray-900" />
                         </button>
-                        <span className="w-6 sm:w-8 text-center font-semibold text-sm sm:text-base">{item.quantity}</span>
+                        <span className="w-6 sm:w-8 text-center font-semibold text-gray-900 text-sm sm:text-base">{item.quantity}</span>
                         <button
                           onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border border-gray-300 hover:bg-gray-100 flex items-center justify-center transition-colors"
+                          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border-2 border-gray-800 hover:bg-gray-100 flex items-center justify-center transition-colors"
                           aria-label="Increase quantity"
                         >
-                          <Plus className="w-3 h-3 sm:w-4 sm:h-4" />
+                          <Plus className="w-3 h-3 sm:w-4 sm:h-4 text-gray-900" />
                         </button>
                       </div>
                       <button
                         onClick={() => removeFromCart(item.id)}
-                        className="text-red-500 hover:text-red-600 transition-colors"
+                        className="text-red-600 hover:text-red-700 hover:bg-red-50 p-2 rounded-lg transition-colors"
                         aria-label="Remove item"
                       >
-                        <Trash2 className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <Trash2 className="w-5 h-5 sm:w-6 sm:h-6" />
                       </button>
                     </div>
                   </motion.div>
@@ -253,7 +253,7 @@ ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
+                      className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-900 placeholder-gray-500 ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
                       placeholder="Enter your full name"
                     />
                     {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
@@ -268,7 +268,7 @@ ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
+                      className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-900 placeholder-gray-500 ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
                       placeholder="07XXXXXXXX"
                     />
                     {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
@@ -283,7 +283,7 @@ ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
                       name="location"
                       value={formData.location}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 ${errors.location ? 'border-red-500' : 'border-gray-300'}`}
+                      className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-900 placeholder-gray-500 ${errors.location ? 'border-red-500' : 'border-gray-300'}`}
                       placeholder="City, County, Address"
                     />
                     {errors.location && <p className="text-red-500 text-sm mt-1">{errors.location}</p>}
@@ -296,7 +296,7 @@ ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
                       name="notes"
                       value={formData.notes}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-900 placeholder-gray-500"
                       rows={3}
                       placeholder="Any special instructions..."
                     />
@@ -336,8 +336,8 @@ ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
                       </>
                     ) : (
                       <>
-                        <ShoppingBag className="w-5 h-5" />
-                        Complete Order via WhatsApp
+                        <MessageCircle className="w-5 h-5" />
+                        Order Now
                       </>
                     )}
                   </button>

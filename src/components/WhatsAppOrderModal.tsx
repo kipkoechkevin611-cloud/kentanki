@@ -73,7 +73,7 @@ ${formData.additionalNotes ? `• Notes: ${formData.additionalNotes}` : ''}
 
 🚚 *Delivery Information:*
 • Free countrywide delivery
-• 3-7 business days delivery time
+• 2-3 business days delivery time
 
 ✅ *Please confirm my order and provide payment details.*
     `.trim();
@@ -112,7 +112,7 @@ ${formData.additionalNotes ? `• Notes: ${formData.additionalNotes}` : ''}
               required
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
+              className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 placeholder-gray-500 ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
               placeholder="Enter your full name"
             />
           </div>
@@ -135,7 +135,7 @@ ${formData.additionalNotes ? `• Notes: ${formData.additionalNotes}` : ''}
               required
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
+              className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 placeholder-gray-500 ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
               placeholder="e.g., 0712 345 678"
             />
           </div>
@@ -158,7 +158,7 @@ ${formData.additionalNotes ? `• Notes: ${formData.additionalNotes}` : ''}
               required
               value={formData.location}
               onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-              className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent ${errors.location ? 'border-red-500' : 'border-gray-300'}`}
+              className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 placeholder-gray-500 ${errors.location ? 'border-red-500' : 'border-gray-300'}`}
               placeholder="Enter your location (town/county)"
             />
           </div>
@@ -181,7 +181,7 @@ ${formData.additionalNotes ? `• Notes: ${formData.additionalNotes}` : ''}
               required
               value={formData.product}
               onChange={(e) => setFormData({ ...formData, product: e.target.value })}
-              className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent ${errors.product ? 'border-red-500' : 'border-gray-300'}`}
+              className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 placeholder-gray-500 ${errors.product ? 'border-red-500' : 'border-gray-300'}`}
               placeholder="Select product"
             />
           </div>
@@ -220,7 +220,7 @@ ${formData.additionalNotes ? `• Notes: ${formData.additionalNotes}` : ''}
           <textarea
             value={formData.additionalNotes}
             onChange={(e) => setFormData({ ...formData, additionalNotes: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 placeholder-gray-500"
             rows={3}
             placeholder="Any special requirements or questions..."
           />

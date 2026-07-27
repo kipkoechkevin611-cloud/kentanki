@@ -77,7 +77,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
     ],
     delivery: {
       areas: 'Nationwide delivery to all 47 counties',
-      timeline: '3-7 business days',
+      timeline: '2-3 business days',
       installation: 'Professional installation available',
       cost: 'FREE countrywide delivery',
     },
@@ -115,7 +115,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
       },
       {
         question: 'How long does delivery take?',
-        answer: 'We offer free nationwide delivery to all 47 counties. Delivery typically takes 3-7 business days depending on your location.',
+        answer: 'We offer free nationwide delivery to all 47 counties. Delivery typically takes 2-3 business days depending on your location.',
       },
       {
         question: 'Do you provide installation services?',
@@ -562,13 +562,14 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                 variant="primary"
                 size="lg"
                 onClick={() => setIsOrderModalOpen(true)}
+                className="text-base py-4 px-8 shadow-lg hover:shadow-xl"
               >
-                <ShoppingCart className="w-5 h-5" />
+                <ShoppingCart className="w-5 h-5 mr-2" />
                 Order Now
               </Button>
               <Link href="/products">
-                <Button variant="secondary" size="lg">
-                  <ArrowLeft className="w-5 h-5" />
+                <Button variant="secondary" size="lg" className="text-base py-4 px-8">
+                  <ArrowLeft className="w-5 h-5 mr-2" />
                   Back to Products
                 </Button>
               </Link>

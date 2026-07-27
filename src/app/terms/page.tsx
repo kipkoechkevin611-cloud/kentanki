@@ -73,7 +73,7 @@ export default function TermsOfService() {
                 <li>Basic warranty coverage</li>
               </ul>
               <p className="text-gray-600 mt-4">
-                We accept payment via M-Pesa, bank transfer, and cash on delivery. Prices are subject to change without prior notice.
+                We accept payment via M-Pesa and bank transfer. Prices are subject to change without prior notice.
               </p>
             </div>
 

@@ -58,7 +58,7 @@ const Chatbot = () => {
     }
 
     if (lowerMessage.includes('payment') || lowerMessage.includes('pay') || lowerMessage.includes('mpesa')) {
-      return "We accept multiple payment methods:\n• M-Pesa (most popular)\n• Bank Transfer\n• Cash on Delivery\n\nPayment is processed after order confirmation.";
+      return "We accept multiple payment methods:\n• M-Pesa (most popular)\n• Bank Transfer\n\nPayment is processed after order confirmation.";
     }
 
     if (lowerMessage.includes('install') || lowerMessage.includes('setup')) {

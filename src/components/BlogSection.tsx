@@ -14,7 +14,7 @@ const BlogSection: React.FC = () => {
       excerpt: 'Learn about the factors to consider when selecting a water tank for your home or business, including capacity, material, and installation requirements.',
       date: 'January 15, 2026',
       readTime: '5 min read',
-      image: '/assets/water-tank-guide.jpg',
+      image: '/images/blog/how-to-choose-water-tank.webp',
       category: 'Guide',
     },
     {
@@ -23,7 +23,7 @@ const BlogSection: React.FC = () => {
       excerpt: 'Understanding different water tank capacities and which size is best suited for your household needs, from small 500L tanks to large 10,000L tanks.',
       date: 'January 10, 2026',
       readTime: '4 min read',
-      image: '/assets/tank-sizes.jpg',
+      image: '/images/blog/water-tank-sizes.webp',
       category: 'Education',
     },
     {
@@ -32,7 +32,7 @@ const BlogSection: React.FC = () => {
       excerpt: 'Essential tips for keeping your water tank clean and in optimal condition, including regular cleaning schedules and maintenance best practices.',
       date: 'January 5, 2026',
       readTime: '6 min read',
-      image: '/assets/tank-maintenance.jpg',
+      image: '/images/blog/water-tank-maintenance.webp',
       category: 'Maintenance',
     },
     {
@@ -41,7 +41,7 @@ const BlogSection: React.FC = () => {
       excerpt: 'Discover why food-grade plastic water tanks are essential for storing drinking water safely and the health benefits they provide.',
       date: 'December 28, 2025',
       readTime: '5 min read',
-      image: '/assets/food-grade-tanks.jpg',
+      image: '/images/blog/benefits-food-grade-tanks.webp',
       category: 'Health',
     },
   ];
@@ -75,10 +75,14 @@ const BlogSection: React.FC = () => {
             >
               <Link href={`/blog/${post.id}`} className="block h-full">
                 <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col group border border-gray-100 hover:border-orange-200">
-                  <div className="relative h-48 overflow-hidden bg-gray-100">
-                    <div className="w-full h-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                      <BookOpen className="w-16 h-16 text-blue-400" />
-                    </div>
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
                     <div className="absolute top-3 left-3">
                       <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
                         {post.category}

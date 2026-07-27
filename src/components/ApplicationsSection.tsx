@@ -2,51 +2,51 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Home, School, Hotel, Building2, Tractor, Factory, Church } from 'lucide-react';
+import Image from 'next/image';
 
 const ApplicationsSection: React.FC = () => {
   const applications = [
     {
-      icon: Home,
       title: 'Homes',
       description: 'Perfect for residential water storage needs',
-      color: 'bg-blue-100 text-blue-600',
+      image: '/images/applications/home.webp',
+      color: 'from-blue-500 to-blue-600',
     },
     {
-      icon: School,
       title: 'Schools',
       description: 'Reliable water supply for educational institutions',
-      color: 'bg-green-100 text-green-600',
+      image: '/images/applications/school.webp',
+      color: 'from-green-500 to-green-600',
     },
     {
-      icon: Hotel,
       title: 'Hotels',
       description: 'Large capacity for hospitality industry',
-      color: 'bg-purple-100 text-purple-600',
+      image: '/images/applications/hotel.webp',
+      color: 'from-purple-500 to-purple-600',
     },
     {
-      icon: Building2,
       title: 'Hospitals',
       description: 'Clean water storage for healthcare facilities',
-      color: 'bg-red-100 text-red-600',
+      image: '/images/applications/hospital.webp',
+      color: 'from-red-500 to-red-600',
     },
     {
-      icon: Tractor,
       title: 'Farms',
       description: 'Irrigation and agricultural water storage',
-      color: 'bg-yellow-100 text-yellow-600',
+      image: '/images/applications/farm.webp',
+      color: 'from-yellow-500 to-yellow-600',
     },
     {
-      icon: Factory,
       title: 'Factories',
       description: 'Industrial water solutions for manufacturing',
-      color: 'bg-orange-100 text-orange-600',
+      image: '/images/applications/factory.webp',
+      color: 'from-orange-500 to-orange-600',
     },
     {
-      icon: Church,
       title: 'Churches',
       description: 'Community water storage solutions',
-      color: 'bg-pink-100 text-pink-600',
+      image: '/images/applications/church.webp',
+      color: 'from-pink-500 to-pink-600',
     },
   ];
 
@@ -66,26 +66,30 @@ const ApplicationsSection: React.FC = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {applications.map((app, index) => {
-            const Icon = app.icon;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <div className="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow border border-gray-100 hover:border-orange-200">
-                  <div className={`w-16 h-16 ${app.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                    <Icon className="w-8 h-8" />
-                  </div>
-                  <h3 className="text-lg font-bold text-navy-900 mb-2">{app.title}</h3>
-                  <p className="text-sm text-gray-600">{app.description}</p>
+          {applications.map((app, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <div className="relative h-64 rounded-xl overflow-hidden group shadow-md hover:shadow-xl transition-all duration-300">
+                <Image
+                  src={app.image}
+                  alt={app.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+                <div className={`absolute inset-0 bg-gradient-to-t ${app.color} opacity-60 group-hover:opacity-70 transition-opacity`} />
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-6 text-center">
+                  <h3 className="text-xl font-bold mb-2">{app.title}</h3>
+                  <p className="text-sm opacity-90">{app.description}</p>
                 </div>
-              </motion.div>
-            );
-          })}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

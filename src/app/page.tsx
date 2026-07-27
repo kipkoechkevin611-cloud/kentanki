@@ -18,6 +18,7 @@ import ApplicationsSection from '../components/ApplicationsSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
+import { useCart } from '../context/CartContext';
 import {
   ShoppingCart,
   Phone,
@@ -38,6 +39,17 @@ import {
 
 export default function Home() {
   const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
+  const { addToCart } = useCart();
+
+  const handleAddToCart = (product: any) => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      capacity: product.capacity,
+      price: `KSh ${product.salePrice.toLocaleString()}`,
+      image: product.image,
+    });
+  };
 
   const stats = [
     { value: '15+', label: 'Years Experience', icon: Award },
@@ -53,7 +65,7 @@ export default function Home() {
       capacity: '5000L',
       originalPrice: 38000,
       salePrice: 24500,
-      image: '/assets/vertical (2).jpeg',
+      image: '/images/home/featured-vertical-tank.webp',
       description: 'Perfect for residential and commercial water storage',
     },
     {
@@ -62,7 +74,7 @@ export default function Home() {
       capacity: '3000L',
       originalPrice: 20000,
       salePrice: 14200,
-      image: '/assets/horizontal (2).jpeg',
+      image: '/images/home/featured-horizontal-tank.webp',
       description: 'Ideal for spaces with height restrictions',
     },
     {
@@ -71,7 +83,7 @@ export default function Home() {
       capacity: '1000L',
       originalPrice: 7500,
       salePrice: 4500,
-      image: '/assets/loft tank.jpeg',
+      image: '/images/home/featured-loft-tank.webp',
       description: 'Compact design for rooftop installations',
     },
     {
@@ -80,7 +92,7 @@ export default function Home() {
       capacity: '3000L',
       originalPrice: 20000,
       salePrice: 14500,
-      image: '/assets/Septic Tank.jpeg',
+      image: '/images/home/featured-septic-tank.webp',
       description: 'Durable septic tank for waste management',
     },
   ];
@@ -171,12 +183,13 @@ export default function Home() {
       <section className="relative h-[calc(100vh-80px)] min-h-[600px] md:min-h-[700px] bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/assets/vertical (2).jpeg"
+            src="/images/home/hero-background.webp"
             alt="Kentank Water Tanks"
             fill
             className="object-cover opacity-20"
             priority
             quality={80}
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-900/70 to-navy-900/90" />
         </div>
@@ -471,7 +484,7 @@ export default function Home() {
               {
                 icon: CreditCard,
                 title: 'Make Payment',
-                description: 'Pay via M-Pesa, bank transfer, or cash on delivery',
+                description: 'Pay via M-Pesa or bank transfer',
                 step: '3',
               },
               {

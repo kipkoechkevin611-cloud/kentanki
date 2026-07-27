@@ -31,7 +31,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: 'What payment methods do you accept?',
-      answer: 'We accept multiple payment methods including M-Pesa (most popular), bank transfers, and cash on delivery. Payment is processed after order confirmation.',
+      answer: 'We accept multiple payment methods including M-Pesa (most popular) and bank transfers. Payment is processed after order confirmation.',
       icon: CreditCard,
     },
     {

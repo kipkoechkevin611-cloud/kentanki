@@ -42,10 +42,10 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
     salePrice: 27500,
     description: 'Premium quality Rototank vertical water tank designed for durability and longevity. Perfect for residential homes, small businesses, and agricultural use. Made from food-grade polyethylene material that is UV resistant and corrosion-free.',
     images: [
-      '/assets/vertical (2).jpeg',
-      '/assets/vertical (2).jpeg',
-      '/assets/vertical (2).jpeg',
-      '/assets/vertical (2).jpeg',
+      '/images/products/vertical-5000l-1.webp',
+      '/images/products/vertical-5000l-2.webp',
+      '/images/products/vertical-5000l-3.webp',
+      '/images/products/vertical-5000l-4.webp',
     ],
     specifications: {
       capacity: '5000 Liters',
@@ -123,7 +123,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
       },
       {
         question: 'What payment methods do you accept?',
-        answer: 'We accept M-Pesa, bank transfers, and cash on delivery for your convenience.',
+        answer: 'We accept M-Pesa and bank transfers for your convenience.',
       },
     ],
     relatedProducts: [
@@ -132,21 +132,21 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
         name: 'Vertical Tank 3000L',
         capacity: '3000L',
         price: 'KSh 14,500',
-        image: '/assets/vertical.jpeg',
+        image: '/images/products/vertical-3000l.webp',
       },
       {
         id: 3,
         name: 'Vertical Tank 10000L',
         capacity: '10000L',
         price: 'KSh 51,000',
-        image: '/assets/vertical (2).jpeg',
+        image: '/images/products/vertical-10000l.webp',
       },
       {
         id: 4,
         name: 'Horizontal Tank 5000L',
         capacity: '5000L',
         price: 'KSh 27,500',
-        image: '/assets/horizontal (2).jpeg',
+        image: '/images/products/horizontal-5000l.webp',
       },
     ],
   };

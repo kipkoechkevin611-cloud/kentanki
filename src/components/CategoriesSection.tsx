@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Droplets } from 'lucide-react';
 
 const CategoriesSection: React.FC = () => {
@@ -10,35 +11,35 @@ const CategoriesSection: React.FC = () => {
     {
       name: 'Vertical Tanks',
       description: 'Standard vertical water tanks for residential and commercial use',
-      image: '/assets/vertical (2).jpeg',
+      image: '/images/categories/vertical-tank.webp',
       link: '/products?category=vertical',
       color: 'from-blue-500 to-blue-600',
     },
     {
       name: 'Horizontal Tanks',
       description: 'Space-saving horizontal tanks for low-clearance areas',
-      image: '/assets/horizontal (2).jpeg',
+      image: '/images/categories/horizontal-tank.webp',
       link: '/products?category=horizontal',
       color: 'from-green-500 to-green-600',
     },
     {
       name: 'Loft Tanks',
       description: 'Compact loft tanks for rooftop installations',
-      image: '/assets/loft tank.jpeg',
+      image: '/images/categories/loft-tank.webp',
       link: '/products?category=loft',
       color: 'from-purple-500 to-purple-600',
     },
     {
       name: 'Underground Tanks',
       description: 'Durable underground tanks for space-efficient storage',
-      image: '/assets/vertical (2).jpeg',
+      image: '/images/categories/underground-tank.webp',
       link: '/products?category=underground',
       color: 'from-orange-500 to-orange-600',
     },
     {
       name: 'Industrial Tanks',
       description: 'Large-capacity tanks for industrial applications',
-      image: '/assets/vertical (2).jpeg',
+      image: '/images/categories/industrial-tank.webp',
       link: '/products?category=industrial',
       color: 'from-red-500 to-red-600',
     },
@@ -70,7 +71,14 @@ const CategoriesSection: React.FC = () => {
             >
               <Link href={category.link} className="block h-full">
                 <div className="relative h-48 md:h-56 rounded-2xl overflow-hidden group shadow-md hover:shadow-xl transition-all duration-300">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-90 group-hover:opacity-95 transition-opacity`} />
+                  <Image
+                    src={category.image}
+                    alt={category.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-t ${category.color} opacity-60 group-hover:opacity-70 transition-opacity`} />
                   <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-6 text-center">
                     <Droplets className="w-12 h-12 mb-4 opacity-80" />
                     <h3 className="text-xl md:text-2xl font-bold mb-2">{category.name}</h3>

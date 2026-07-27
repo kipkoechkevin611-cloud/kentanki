@@ -37,7 +37,6 @@ const Footer = () => {
   const paymentMethods = [
     { name: 'M-Pesa', icon: '💳' },
     { name: 'Bank Transfer', icon: '🏦' },
-    { name: 'Cash on Delivery', icon: '💵' },
   ];
 
   return (
@@ -49,7 +48,7 @@ const Footer = () => {
             <div className="flex items-center gap-2 mb-4">
               <div className="relative w-10 h-10">
                 <Image
-                  src="/assets/logo.jpeg"
+                  src="/images/home/logo.webp"
                   alt="Kentank Logo"
                   fill
                   className="object-contain"

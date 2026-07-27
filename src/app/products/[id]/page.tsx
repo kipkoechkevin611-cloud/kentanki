@@ -24,7 +24,8 @@ import {
   HelpCircle,
   Package,
   Award,
-  ThumbsUp
+  ThumbsUp,
+  Sun
 } from 'lucide-react';
 
 export default function ProductDetail({ params }: { params: { id: string } }) {
@@ -37,7 +38,8 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
     id: params.id,
     name: 'Vertical Tank 5000L',
     capacity: '5000L',
-    price: 'KSh 27,500',
+    originalPrice: 35000,
+    salePrice: 27500,
     description: 'Premium quality Rototank vertical water tank designed for durability and longevity. Perfect for residential homes, small businesses, and agricultural use. Made from food-grade polyethylene material that is UV resistant and corrosion-free.',
     images: [
       '/assets/vertical (2).jpeg',
@@ -219,7 +221,12 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
               </div>
 
               <h1 className="text-4xl font-bold text-navy-900 mb-4">{product.name}</h1>
-              <p className="text-3xl font-bold text-orange-500 mb-6">{product.price}</p>
+              <div className="mb-6">
+                <p className="text-2xl text-gray-400 line-through">KSh {product.originalPrice.toLocaleString()}</p>
+                <p className="text-4xl font-bold text-green-600">KSh {product.salePrice.toLocaleString()}</p>
+                <p className="text-lg text-green-600 font-semibold">You Save KSh {(product.originalPrice - product.salePrice).toLocaleString()}</p>
+                <p className="text-sm text-orange-500 mt-2">Special Offer – Limited Time Price</p>
+              </div>
               <p className="text-gray-600 mb-8 leading-relaxed">{product.description}</p>
 
               {/* Quantity Selector */}
@@ -260,7 +267,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                       id: parseInt(product.id),
                       name: product.name,
                       capacity: product.capacity,
-                      price: product.price,
+                      price: `KSh ${product.salePrice.toLocaleString()}`,
                       image: product.images[0],
                     });
                     setQuantity(1);
@@ -269,8 +276,8 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                   <ShoppingCart className="w-5 h-5 mr-2" />
                   Add to Cart
                 </Button>
-                <Link href={`/products/${product.id}`} className="flex-1">
-                  <Button variant="outline" size="lg" className="w-full">Details</Button>
+                <Link href="/products" className="flex-1">
+                  <Button variant="outline" size="lg" className="w-full">Back to Products</Button>
                 </Link>
               </div>
 
@@ -288,8 +295,42 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
 
               <div className="flex items-center gap-4">
                 <Shield className="w-6 h-6 text-green-500" />
-                <span className="text-gray-600">25-Year Warranty Included</span>
+                <span className="text-gray-600">15-Year Warranty Included</span>
               </div>
+
+              {/* Product Benefits */}
+              <Card className="p-6 mt-6 bg-orange-50 border-orange-200">
+                <h3 className="font-bold text-navy-900 mb-4 flex items-center gap-2">
+                  <Award className="w-5 h-5 text-orange-500" />
+                  Product Benefits
+                </h3>
+                <div className="grid grid-cols-2 gap-3 text-sm">
+                  <div className="flex items-center gap-2">
+                    <Sun className="w-4 h-4 text-orange-500" />
+                    <span>UV Stabilized</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Droplets className="w-4 h-4 text-blue-500" />
+                    <span>Food Grade Plastic</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Package className="w-4 h-4 text-green-500" />
+                    <span>Heavy Duty Construction</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-500" />
+                    <span>Safe for Drinking Water</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <ThumbsUp className="w-4 h-4 text-purple-500" />
+                    <span>Long Service Life</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Shield className="w-4 h-4 text-blue-500" />
+                    <span>Leak Resistant</span>
+                  </div>
+                </div>
+              </Card>
             </motion.div>
           </div>
         </div>

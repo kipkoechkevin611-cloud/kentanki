@@ -40,26 +40,30 @@ export default function Contact() {
     {
       icon: Phone,
       title: 'Phone',
-      details: ['+254 740 272 542', '+254 720 123 456'],
-      action: 'tel:+254740272542',
+      details: ['+254 736 010 873'],
+      action: 'tel:+254736010873',
+      color: 'bg-green-100 text-green-600',
     },
     {
       icon: Mail,
       title: 'Email',
-      details: ['info@kentank.co.ke', 'sales@kentank.co.ke'],
+      details: ['info@kentank.co.ke'],
       action: 'mailto:info@kentank.co.ke',
+      color: 'bg-blue-100 text-blue-600',
     },
     {
       icon: MapPin,
       title: 'Office Location',
       details: ['Industrial Area, Nairobi', 'Kenya'],
-      action: '#',
+      action: 'https://maps.google.com',
+      color: 'bg-red-100 text-red-600',
     },
     {
       icon: Clock,
       title: 'Working Hours',
       details: ['Mon - Sat: 8:00 AM - 6:00 PM', 'Sunday: Closed'],
       action: '#',
+      color: 'bg-orange-100 text-orange-600',
     },
   ];
 
@@ -91,7 +95,7 @@ export default function Contact() {
       {/* Contact Info Cards */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
               <motion.div
                 key={index}
@@ -100,15 +104,44 @@ export default function Contact() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="p-6 text-center h-full">
-                  <info.icon className="w-12 h-12 text-orange-500 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-navy-900 mb-3">{info.title}</h3>
-                  {info.details.map((detail, i) => (
-                    <p key={i} className="text-gray-600 mb-1">{detail}</p>
-                  ))}
-                </Card>
+                <a
+                  href={info.action}
+                  target={info.action.startsWith('http') ? '_blank' : undefined}
+                  rel={info.action.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  className="block h-full"
+                >
+                  <Card className="p-6 text-center h-full hover:shadow-lg transition-shadow border-2 border-transparent hover:border-orange-200">
+                    <div className={`w-14 h-14 ${info.color} rounded-xl flex items-center justify-center mx-auto mb-4`}>
+                      <info.icon className="w-7 h-7" />
+                    </div>
+                    <h3 className="text-lg font-bold text-navy-900 mb-3">{info.title}</h3>
+                    {info.details.map((detail, i) => (
+                      <p key={i} className="text-gray-600 mb-1">{detail}</p>
+                    ))}
+                  </Card>
+                </a>
               </motion.div>
             ))}
+          </div>
+
+          {/* Quick Action Buttons */}
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
+            <a
+              href="tel:+254736010873"
+              className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+            >
+              <Phone className="w-5 h-5" />
+              Call Now
+            </a>
+            <a
+              href="https://wa.me/254736010873"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+            >
+              <MessageCircle className="w-5 h-5" />
+              WhatsApp
+            </a>
           </div>
         </div>
       </section>
@@ -226,20 +259,17 @@ export default function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full min-h-[500px] overflow-hidden">
-                <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <MapPin className="w-16 h-16 text-orange-500 mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold text-navy-900 mb-2">Our Location</h3>
-                    <p className="text-gray-600 mb-4">Industrial Area, Nairobi, Kenya</p>
-                    <p className="text-gray-500 text-sm">
-                      Google Maps integration would be embedded here
-                    </p>
-                    <Button variant="outline" className="mt-4">
-                      Get Directions
-                    </Button>
-                  </div>
-                </div>
+              <Card className="h-full min-h-[500px] overflow-hidden p-0">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.253749977852!2d36.8149!3d-1.28638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d8f8f8f8f9%3A0x8f8f8f8f8f8f8f8!2sIndustrial%20Area%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1234567890"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, minHeight: '500px' }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Kentank Location Map"
+                />
               </Card>
             </motion.div>
           </div>
@@ -261,7 +291,7 @@ export default function Contact() {
               Get instant responses to your inquiries via WhatsApp
             </p>
             <a
-              href="https://wa.me/2540740272542"
+              href="https://wa.me/254736010873"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white text-green-500 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"

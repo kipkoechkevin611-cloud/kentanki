@@ -13,6 +13,9 @@ import TrustBadges from '../components/TrustBadges';
 import WhyChooseUs from '../components/WhyChooseUs';
 import OurProcess from '../components/OurProcess';
 import BlogSection from '../components/BlogSection';
+import CategoriesSection from '../components/CategoriesSection';
+import ApplicationsSection from '../components/ApplicationsSection';
+import TestimonialsSection from '../components/TestimonialsSection';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import {
@@ -199,49 +202,50 @@ export default function Home() {
                 <Truck className="w-5 h-5 text-orange-400" />
                 <span className="text-orange-300 font-semibold text-sm">Free Countrywide Delivery</span>
               </motion.div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 leading-tight">
                 Premium Water Storage Solutions in Kenya
               </h1>
-              <p className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl">
+              <p className="text-base md:text-lg lg:text-xl text-gray-200 mb-6 leading-relaxed max-w-3xl">
                 Genuine Rototank water tanks with free countrywide delivery. From 500L to 24,000L for homes, farms, and industries.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row gap-4 mb-6">
                 <Link href="/products" className="flex-1 sm:flex-none">
-                  <Button variant="primary" size="lg" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white text-lg py-4 px-8 shadow-lg hover:shadow-xl transition-all">
-                    <ShoppingCart className="w-6 h-6 mr-2" />
+                  <Button variant="primary" size="lg" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white text-base py-3 px-6 shadow-lg hover:shadow-xl transition-all">
+                    <ShoppingCart className="w-5 h-5 mr-2" />
                     Browse Products
                   </Button>
                 </Link>
-                <a href="tel:+254736010873" className="flex-1 sm:flex-none">
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-navy-900 text-lg py-4 px-8 shadow-lg hover:shadow-xl transition-all">
-                    <Phone className="w-6 h-6 mr-2" />
-                    Call +254 736 010 873
-                  </Button>
+                <a
+                  href="tel:+254736010873"
+                  className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-navy-900 text-base font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all cursor-pointer"
+                >
+                  <Phone className="w-5 h-5" />
+                  Call +254 736 010 873
                 </a>
               </div>
-              <div className="flex flex-wrap gap-6 items-center">
-                <div className="flex items-center gap-3 text-white">
-                  <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center border border-green-500/30">
-                    <Shield className="w-6 h-6 text-green-400" />
+              <div className="flex flex-wrap gap-4 items-center">
+                <div className="flex items-center gap-2 text-white">
+                  <div className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center border border-green-500/30">
+                    <Shield className="w-5 h-5 text-green-400" />
                   </div>
                   <div>
-                    <p className="font-bold text-lg">15-Year Warranty</p>
-                    <p className="text-sm text-gray-300">Industry-leading</p>
+                    <p className="font-bold text-base">15-Year Warranty</p>
+                    <p className="text-xs text-gray-300">Industry-leading</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 text-white">
-                  <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center border border-blue-500/30">
-                    <Award className="w-6 h-6 text-blue-400" />
+                <div className="flex items-center gap-2 text-white">
+                  <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center border border-blue-500/30">
+                    <Award className="w-5 h-5 text-blue-400" />
                   </div>
                   <div>
-                    <p className="font-bold text-lg">KEBS Certified</p>
-                    <p className="text-sm text-gray-300">Quality assured</p>
+                    <p className="font-bold text-base">KEBS Certified</p>
+                    <p className="text-xs text-gray-300">Quality assured</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-2xl border border-white/20">
-                  <Phone className="w-6 h-6 text-orange-400" />
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-xl border border-white/20">
+                  <Phone className="w-5 h-5 text-orange-400" />
                   <div>
-                    <a href="tel:+254736010873" className="text-xl font-bold text-white hover:text-orange-400 transition-colors">+254 736 010 873</a>
+                    <a href="tel:+254736010873" className="text-base font-bold text-white hover:text-orange-400 transition-colors">+254 736 010 873</a>
                     <p className="text-xs text-gray-300">24/7 Support</p>
                   </div>
                 </div>
@@ -252,9 +256,9 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
@@ -264,9 +268,9 @@ export default function Home() {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <stat.icon className="w-12 h-12 text-orange-500 mx-auto mb-4" />
-                <p className="text-4xl font-bold text-navy-900 mb-2">{stat.value}</p>
-                <p className="text-gray-600">{stat.label}</p>
+                <stat.icon className="w-10 h-10 text-orange-500 mx-auto mb-3" />
+                <p className="text-3xl md:text-4xl font-bold text-navy-900 mb-2">{stat.value}</p>
+                <p className="text-sm md:text-base text-gray-600">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -274,6 +278,10 @@ export default function Home() {
       </section>
 
       <WhyChooseUs />
+
+      <CategoriesSection />
+
+      <ApplicationsSection />
 
       {/* Featured Products */}
       <section className="py-20 bg-gray-50">
@@ -284,8 +292,8 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-navy-900 mb-4">Featured Products</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">Featured Products</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
               Our most popular water storage solutions trusted by thousands of customers
             </p>
           </motion.div>
@@ -340,7 +348,7 @@ export default function Home() {
                       <p className="text-xs text-gray-600 mb-3 line-clamp-2">{product.description}</p>
                       <div className="mb-3">
                         <p className="text-xs text-gray-400 line-through">KSh {product.originalPrice.toLocaleString()}</p>
-                        <p className="text-lg md:text-xl font-bold text-green-600">KSh {product.salePrice.toLocaleString()}</p>
+                        <p className="text-base md:text-lg font-bold text-green-600">KSh {product.salePrice.toLocaleString()}</p>
                         <p className="text-xs text-green-600 font-semibold">You Save KSh {savings.toLocaleString()}</p>
                         <p className="text-xs text-orange-500 mt-1">Special Offer – Limited Time Price</p>
                       </div>
@@ -668,6 +676,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <TestimonialsSection />
 
       <OurProcess />
 

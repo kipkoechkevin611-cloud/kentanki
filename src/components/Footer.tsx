@@ -48,7 +48,7 @@ const Footer = () => {
             <div className="flex items-center gap-2 mb-4">
               <div className="relative w-10 h-10">
                 <Image
-                  src="/images/home/logo.webp"
+                  src="/assets/logo.jpeg"
                   alt="Kentank Logo"
                   fill
                   className="object-contain"

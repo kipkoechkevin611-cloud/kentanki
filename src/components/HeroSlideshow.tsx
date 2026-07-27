@@ -19,28 +19,28 @@ const HeroSlideshow = () => {
 
   const slides: Slide[] = [
     {
-      image: '/images/home/hero-slide-1.webp',
+      image: '/assets/vertical (2).jpeg',
       title: 'Kentank Premium Water Tanks',
       subtitle: 'Genuine Rototank water storage solutions with FREE countrywide delivery',
       badge: 'FREE DELIVERY',
       cta: 'Shop Now',
     },
     {
-      image: '/images/home/hero-slide-2.webp',
+      image: '/assets/horizontal (2).jpeg',
       title: 'Starting from KSh 5,500',
       subtitle: 'Affordable prices for all tank sizes - 1,000L to 24,000L',
       badge: 'BEST PRICES',
       cta: 'View Products',
     },
     {
-      image: '/images/home/hero-slide-3.webp',
+      image: '/assets/loft tank.jpeg',
       title: '25-Year Warranty',
       subtitle: 'Industry-leading warranty on all Rototank products',
       badge: 'WARRANTY',
       cta: 'Learn More',
     },
     {
-      image: '/images/home/hero-slide-4.webp',
+      image: '/assets/under ground.jpeg',
       title: 'KEBS Certified',
       subtitle: '100% food-grade polyethylene - safe for drinking water',
       badge: 'CERTIFIED',

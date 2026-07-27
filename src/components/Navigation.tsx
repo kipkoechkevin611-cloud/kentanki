@@ -44,7 +44,7 @@ const Navigation = () => {
           <Link href="/" className="flex items-center gap-2" aria-label="Kentank Home">
             <div className="relative w-12 h-12">
               <Image
-                src="/images/home/logo.webp"
+                src="/assets/logo.jpeg"
                 alt="Kentank Logo"
                 fill
                 className="object-contain"

@@ -65,7 +65,7 @@ export default function Home() {
       capacity: '5000L',
       originalPrice: 38000,
       salePrice: 24500,
-      image: '/images/home/featured-vertical-tank.webp',
+      image: '/assets/vertical (2).jpeg',
       description: 'Perfect for residential and commercial water storage',
     },
     {
@@ -74,7 +74,7 @@ export default function Home() {
       capacity: '3000L',
       originalPrice: 20000,
       salePrice: 14200,
-      image: '/images/home/featured-horizontal-tank.webp',
+      image: '/assets/horizontal (2).jpeg',
       description: 'Ideal for spaces with height restrictions',
     },
     {
@@ -83,7 +83,7 @@ export default function Home() {
       capacity: '1000L',
       originalPrice: 7500,
       salePrice: 4500,
-      image: '/images/home/featured-loft-tank.webp',
+      image: '/assets/loft tank.jpeg',
       description: 'Compact design for rooftop installations',
     },
     {
@@ -92,7 +92,7 @@ export default function Home() {
       capacity: '3000L',
       originalPrice: 20000,
       salePrice: 14500,
-      image: '/images/home/featured-septic-tank.webp',
+      image: '/assets/Septic Tank.jpeg',
       description: 'Durable septic tank for waste management',
     },
   ];
@@ -183,7 +183,7 @@ export default function Home() {
       <section className="relative h-[calc(100vh-80px)] min-h-[600px] md:min-h-[700px] bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/home/hero-background.webp"
+            src="/assets/vertical (2).jpeg"
             alt="Kentank Water Tanks"
             fill
             className="object-cover opacity-20"

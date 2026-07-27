@@ -12,6 +12,7 @@ import FAQ from '../components/FAQ';
 import TrustBadges from '../components/TrustBadges';
 import WhyChooseUs from '../components/WhyChooseUs';
 import OurProcess from '../components/OurProcess';
+import BlogSection from '../components/BlogSection';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import {
@@ -669,6 +670,8 @@ export default function Home() {
       </section>
 
       <OurProcess />
+
+      <BlogSection />
 
       <TrustBadges />
 

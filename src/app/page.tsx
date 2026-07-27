@@ -193,15 +193,6 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 lg:p-16 border border-white/20 shadow-2xl"
             >
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="inline-flex items-center gap-2 bg-orange-500/20 border border-orange-500/30 px-4 py-2 rounded-full mb-6"
-              >
-                <Truck className="w-5 h-5 text-orange-400" />
-                <span className="text-orange-300 font-semibold text-sm">Free Countrywide Delivery</span>
-              </motion.div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 leading-tight">
                 Premium Water Storage Solutions in Kenya
               </h1>

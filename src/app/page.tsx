@@ -180,7 +180,7 @@ export default function Home() {
       <Navigation />
 
       {/* Hero Section - Amazing Design */}
-      <section className="relative h-[calc(100vh-80px)] min-h-[700px] md:min-h-[800px] bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 overflow-hidden">
+      <section className="relative h-[calc(100vh-80px)] min-h-[650px] md:min-h-[750px] bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 overflow-hidden pt-8">
         <div className="absolute inset-0">
           <Image
             src="/assets/vertical (2).jpeg"
@@ -216,16 +216,16 @@ export default function Home() {
               </span>
             </motion.div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
               Premium Water Storage Solutions
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl">
+            <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-3xl">
               Genuine Rototank water tanks with free countrywide delivery. From 500L to 24,000L for homes, farms, and industries.
             </p>
             
             <div className="flex flex-wrap gap-4 mb-12">
-              <Link href="/products" className="flex-1 sm:flex-none min-w-[200px]">
-                <Button variant="primary" size="lg" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white text-lg py-4 px-8 shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+              <Link href="/products" className="flex-1 sm:flex-none min-w-[180px]">
+                <Button variant="primary" size="lg" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white text-base py-3 px-6 shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
                   Browse Products
                 </Button>
               </Link>
@@ -233,16 +233,16 @@ export default function Home() {
                 href="https://wa.me/254736010873"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 sm:flex-none min-w-[200px] inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white text-lg font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer"
+                className="flex-1 sm:flex-none min-w-[180px] inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white text-base font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer"
               >
-                <MessageCircle className="w-5 h-5" />
+                <MessageCircle className="w-4 h-4" />
                 Order via WhatsApp
               </a>
               <a
                 href="tel:+254736010873"
-                className="flex-1 sm:flex-none min-w-[200px] inline-flex items-center justify-center gap-2 bg-white text-navy-900 hover:bg-gray-100 text-lg font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer"
+                className="flex-1 sm:flex-none min-w-[180px] inline-flex items-center justify-center gap-2 bg-white text-navy-900 hover:bg-gray-100 text-base font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer"
               >
-                <Phone className="w-5 h-5 text-orange-500" />
+                <Phone className="w-4 h-4 text-orange-500" />
                 +254 736 010 873
               </a>
             </div>

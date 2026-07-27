@@ -3,9 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { Droplets, Home, Globe, Factory, Package } from 'lucide-react';
 
 const CategoryNavigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeCategory, setActiveCategory] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,12 +18,31 @@ const CategoryNavigation = () => {
   }, []);
 
   const categories = [
-    { href: '/products?category=vertical', label: 'Vertical Tanks' },
-    { href: '/products?category=horizontal', label: 'Horizontal Tanks' },
-    { href: '/products?category=loft', label: 'Loft Tanks' },
-    { href: '/products?category=underground', label: 'Underground Tanks' },
-    { href: '/products?category=industrial', label: 'Industrial Tanks' },
-    { href: '/products?category=accessories', label: 'Accessories' },
+    { 
+      href: '/products?category=vertical', 
+      label: 'Vertical Tanks',
+      icon: Droplets
+    },
+    { 
+      href: '/products?category=horizontal', 
+      label: 'Horizontal Tanks',
+      icon: Droplets
+    },
+    { 
+      href: '/products?category=loft', 
+      label: 'Loft Tanks',
+      icon: Home
+    },
+    { 
+      href: '/products?category=underground', 
+      label: 'Underground Tanks',
+      icon: Globe
+    },
+    { 
+      href: '/products?category=industrial', 
+      label: 'Industrial Tanks',
+      icon: Factory
+    },
   ];
 
   return (
@@ -33,17 +54,30 @@ const CategoryNavigation = () => {
       aria-label="Category navigation"
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-center gap-4 md:gap-6 py-3 overflow-x-auto">
-          {categories.map((category, index) => (
-            <Link
-              key={index}
-              href={category.href}
-              className="text-sm md:text-base text-gray-700 hover:text-orange-500 transition-colors font-medium whitespace-nowrap px-3 py-2 rounded-lg hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-orange-500"
-              aria-label={`Browse ${category.label}`}
-            >
-              {category.label}
-            </Link>
-          ))}
+        <div className="flex items-center justify-center">
+          <div className="flex items-center gap-3 py-3 overflow-x-auto scrollbar-hide max-w-full">
+            {categories.map((category, index) => {
+              const Icon = category.icon;
+              const isActive = activeCategory === category.href;
+              
+              return (
+                <Link
+                  key={index}
+                  href={category.href}
+                  onClick={() => setActiveCategory(category.href)}
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-300 ${
+                    isActive 
+                      ? 'bg-orange-500 text-white shadow-md' 
+                      : 'bg-white text-gray-700 border border-gray-200 hover:border-orange-300 hover:text-orange-500'
+                  }`}
+                  aria-label={`Browse ${category.label}`}
+                >
+                  <Icon className="w-4 h-4" />
+                  <span>{category.label}</span>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </div>
     </motion.nav>

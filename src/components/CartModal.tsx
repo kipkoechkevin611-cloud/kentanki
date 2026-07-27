@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Plus, Minus, Trash2, ShoppingBag, User, Phone as PhoneIcon, MapPin, Truck, Clock, CheckCircle, ChevronRight, ChevronLeft } from 'lucide-react';
+import { X, Plus, Minus, Trash2, ShoppingBag, User, Phone as PhoneIcon, MapPin, Truck, Clock, CheckCircle, ChevronRight, ChevronLeft, MessageCircle } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import Modal from './ui/Modal';
 import Image from 'next/image';

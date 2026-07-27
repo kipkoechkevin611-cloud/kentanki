@@ -61,7 +61,7 @@ export default function RootLayout({
     name: 'Kentank Kenya - Kentank Water Tanks',
     description: 'Genuine Kentank water tanks for homes, farms, and industries. Free countrywide delivery, 15-year warranty, KEBS certified.',
     url: 'https://kentank.co.ke',
-    telephone: '+254736010873',
+    telephone: '+2540785398094',
     email: 'info@kentank.co.ke',
     address: {
       '@type': 'PostalAddress',
@@ -161,7 +161,7 @@ export default function RootLayout({
     description: 'Leading supplier of genuine Kentank water tanks in Kenya',
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+254736010873',
+      telephone: '+2540785398094',
       contactType: 'sales',
       availableLanguage: 'English',
     },

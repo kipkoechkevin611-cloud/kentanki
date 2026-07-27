@@ -167,7 +167,7 @@ const DeliveryEstimator: React.FC<DeliveryEstimatorProps> = ({ onClose }) => {
               <ul className="text-sm text-blue-800 space-y-1">
                 <li>• Free delivery to all 47 counties</li>
                 <li>• Orders placed before 2 PM ship same day</li>
-                <li>• You'll receive a call before delivery</li>
+                <li>• You&apos;ll receive a call before delivery</li>
                 <li>• Professional installation available on request</li>
               </ul>
             </div>

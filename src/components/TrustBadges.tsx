@@ -55,7 +55,7 @@ const TrustBadges: React.FC = () => {
         >
           <h2 className="text-3xl font-bold text-navy-900 mb-4">Why Trust Kentank?</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            We're committed to providing the highest quality water storage solutions with unmatched service
+            We&apos;re committed to providing the highest quality water storage solutions with unmatched service
           </p>
         </motion.div>
 

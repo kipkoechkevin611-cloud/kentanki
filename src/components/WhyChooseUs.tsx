@@ -51,10 +51,10 @@ const WhyChooseUs: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="mb-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4">Why Choose Kentanki?</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-2">Why Choose Kentanki?</h2>
+          <p className="text-gray-600">
             We provide premium water storage solutions with unmatched quality and service
           </p>
         </motion.div>

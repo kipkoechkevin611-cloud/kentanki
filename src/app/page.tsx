@@ -179,7 +179,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navigation />
 
-      {/* Hero Section - Premium Modern UI */}
+      {/* Hero Section - Clean & Clear */}
       <section className="relative h-[calc(100vh-80px)] min-h-[600px] md:min-h-[700px] bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 overflow-hidden">
         <div className="absolute inset-0">
           <Image
@@ -198,63 +198,28 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-5xl w-full"
+            className="max-w-4xl w-full"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 lg:p-16 border border-white/20 shadow-2xl"
-            >
-              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 leading-tight">
-                Premium Water Storage Solutions in Kenya
-              </h1>
-              <p className="text-base md:text-lg lg:text-xl text-gray-200 mb-6 leading-relaxed max-w-3xl">
-                Genuine Rototank water tanks with free countrywide delivery. From 500L to 24,000L for homes, farms, and industries.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-6">
-                <Link href="/products" className="flex-1 sm:flex-none">
-                  <Button variant="primary" size="lg" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white text-base py-3 px-6 shadow-lg hover:shadow-xl transition-all">
-                    <ShoppingCart className="w-5 h-5 mr-2" />
-                    Browse Products
-                  </Button>
-                </Link>
-                <a
-                  href="tel:+254736010873"
-                  className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-navy-900 text-base font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all cursor-pointer"
-                >
-                  <Phone className="w-5 h-5" />
-                  Call +254 736 010 873
-                </a>
-              </div>
-              <div className="flex flex-wrap gap-4 items-center">
-                <div className="flex items-center gap-2 text-white">
-                  <div className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center border border-green-500/30">
-                    <Shield className="w-5 h-5 text-green-400" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-base">15-Year Warranty</p>
-                    <p className="text-xs text-gray-300">Industry-leading</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 text-white">
-                  <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center border border-blue-500/30">
-                    <Award className="w-5 h-5 text-blue-400" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-base">KEBS Certified</p>
-                    <p className="text-xs text-gray-300">Quality assured</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-xl border border-white/20">
-                  <Phone className="w-5 h-5 text-orange-400" />
-                  <div>
-                    <a href="tel:+254736010873" className="text-base font-bold text-white hover:text-orange-400 transition-colors">+254 736 010 873</a>
-                    <p className="text-xs text-gray-300">24/7 Support</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
+              Premium Water Storage Solutions in Kenya
+            </h1>
+            <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-3xl">
+              Genuine Rototank water tanks with free countrywide delivery. From 500L to 24,000L for homes, farms, and industries.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <Link href="/products" className="flex-1 sm:flex-none">
+                <Button variant="primary" size="lg" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white text-lg py-4 px-8 shadow-lg hover:shadow-xl transition-all">
+                  Browse Products
+                </Button>
+              </Link>
+              <a
+                href="tel:+254736010873"
+                className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-navy-900 text-lg font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all cursor-pointer"
+              >
+                <Phone className="w-5 h-5" />
+                Call +254 736 010 873
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -288,12 +253,15 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-8"
+            className="flex justify-between items-center mb-8"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">Featured Products</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
-              Our most popular water storage solutions trusted by thousands of customers
-            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900">Featured Products</h2>
+            <Link href="/products">
+              <button className="inline-flex items-center gap-2 text-orange-500 hover:text-orange-600 font-semibold text-sm transition-colors">
+                View All
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </Link>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
@@ -309,7 +277,7 @@ export default function Home() {
                   transition={{ delay: index * 0.1 }}
                 >
                   <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col group border border-gray-100 hover:border-orange-200">
-                    <div className="relative h-44 md:h-52 overflow-hidden bg-gray-100">
+                    <div className="relative h-48 overflow-hidden bg-gray-100">
                       <Image
                         src={product.image}
                         alt={product.name}
@@ -333,31 +301,23 @@ export default function Home() {
                         {product.capacity}
                       </div>
                     </div>
-                    <div className="p-4 md:p-5 flex-1 flex flex-col">
-                      <h3 className="text-sm md:text-base font-bold text-navy-900 mb-2 line-clamp-2">{product.name}</h3>
-                      <p className="text-xs text-gray-600 mb-3 line-clamp-2">{product.description}</p>
+                    <div className="p-4 flex-1 flex flex-col">
+                      <h3 className="text-base font-bold text-navy-900 mb-2 line-clamp-2">{product.name}</h3>
+                      <p className="text-sm text-gray-600 mb-3 line-clamp-2">{product.description}</p>
                       <div className="mb-3">
-                        <p className="text-xs text-gray-400 line-through">KSh {product.originalPrice.toLocaleString()}</p>
-                        <p className="text-base md:text-lg font-bold text-green-600">KSh {product.salePrice.toLocaleString()}</p>
-                        <p className="text-xs text-green-600 font-semibold">You Save KSh {savings.toLocaleString()}</p>
-                        <p className="text-xs text-orange-500 mt-1">Special Offer – Limited Time Price</p>
+                        <p className="text-sm text-gray-400 line-through">KSh {product.originalPrice.toLocaleString()}</p>
+                        <p className="text-lg font-bold text-green-600">KSh {product.salePrice.toLocaleString()}</p>
+                        <p className="text-sm text-green-600 font-semibold">Save KSh {savings.toLocaleString()}</p>
                       </div>
                       <div className="mt-auto space-y-2">
-                        <div className="flex gap-2">
-                          <Button
-                            variant="primary"
-                            className="flex-1 text-xs py-2.5"
-                            onClick={() => handleAddToCart(product)}
-                          >
-                            <ShoppingCart className="w-3 h-3 mr-1" />
-                            Add to Cart
-                          </Button>
-                          <Link href={`/products/${product.id}`} className="flex-1">
-                            <Button variant="outline" className="w-full text-xs py-2.5">
-                              Details
-                            </Button>
-                          </Link>
-                        </div>
+                        <Button
+                          variant="primary"
+                          className="w-full text-sm py-2.5"
+                          onClick={() => handleAddToCart(product)}
+                        >
+                          <ShoppingCart className="w-4 h-4 mr-2" />
+                          Add to Cart
+                        </Button>
                       </div>
                     </div>
                   </div>
@@ -365,20 +325,6 @@ export default function Home() {
               );
             })}
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mt-8"
-          >
-            <Link href="/products">
-              <button className="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-colors">
-                View All Products
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </Link>
-          </motion.div>
         </div>
       </section>
 
@@ -398,10 +344,10 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="mb-12"
           >
-            <h2 className="text-4xl font-bold text-white mb-4">What Our Customers Say</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">What Our Customers Say</h2>
+            <p className="text-gray-300">
               Trusted by thousands of satisfied customers across Kenya
             </p>
           </motion.div>

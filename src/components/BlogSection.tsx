@@ -53,15 +53,15 @@ const BlogSection: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="flex justify-between items-center mb-8"
         >
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <BookOpen className="w-8 h-8 text-orange-500" />
-            <h2 className="text-3xl md:text-4xl font-bold text-navy-900">Blog & Resources</h2>
-          </div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Expert tips and guides to help you make informed decisions about water storage
-          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-navy-900">Blog & Resources</h2>
+          <Link href="/blog">
+            <button className="inline-flex items-center gap-2 text-orange-500 hover:text-orange-600 font-semibold text-sm transition-colors">
+              View All
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </Link>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -116,20 +116,6 @@ const BlogSection: React.FC = () => {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <Link href="/blog">
-            <button className="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-              View All Articles
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </Link>
-        </motion.div>
       </div>
     </section>
   );

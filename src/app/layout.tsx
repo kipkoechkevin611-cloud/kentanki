@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Chatbot from "../components/Chatbot";
-import CategoryNavigation from "../components/CategoryNavigation";
 import CartToastWrapper from "../components/CartToastWrapper";
 import { CartProvider } from "../context/CartContext";
 
@@ -190,7 +189,6 @@ export default function RootLayout({
           Skip to main content
         </a>
         <CartProvider>
-          <CategoryNavigation />
           <div id="main-content">
             {children}
           </div>

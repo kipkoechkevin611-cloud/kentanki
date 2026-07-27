@@ -161,63 +161,89 @@ export default function Home() {
     <main className="min-h-screen">
       <Navigation />
 
-      {/* Hero Section - Static */}
-      <section className="relative h-[calc(100vh-80px)] min-h-[500px] md:min-h-[600px] bg-gradient-to-r from-navy-900 to-navy-800 overflow-hidden">
+      {/* Hero Section - Premium Modern UI */}
+      <section className="relative h-[calc(100vh-80px)] min-h-[600px] md:min-h-[700px] bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/assets/vertical (2).jpeg"
             alt="Kentank Water Tanks"
             fill
-            className="object-cover opacity-15"
+            className="object-cover opacity-20"
             priority
             quality={80}
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-900/70 to-navy-900/90" />
         </div>
-        <div className="relative z-10 container mx-auto px-4 h-full flex items-center pt-20">
+        <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl w-full"
+            className="max-w-5xl w-full"
           >
-            <div className="bg-navy-900/60 backdrop-blur-sm rounded-2xl p-6 md:p-10 lg:p-12">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 lg:p-16 border border-white/20 shadow-2xl"
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="inline-flex items-center gap-2 bg-orange-500/20 border border-orange-500/30 px-4 py-2 rounded-full mb-6"
+              >
+                <Truck className="w-5 h-5 text-orange-400" />
+                <span className="text-orange-300 font-semibold text-sm">Free Countrywide Delivery</span>
+              </motion.div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
                 Premium Water Storage Solutions in Kenya
               </h1>
-              <p className="text-base md:text-lg lg:text-xl text-gray-200 mb-6 md:mb-8 leading-relaxed">
+              <p className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl">
                 Genuine Rototank water tanks with free countrywide delivery. From 500L to 24,000L for homes, farms, and industries.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/products" className="flex-1 sm:flex-none">
-                  <Button variant="primary" size="lg" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white">
-                    <ShoppingCart className="w-5 h-5 mr-2" />
+                  <Button variant="primary" size="lg" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white text-lg py-4 px-8 shadow-lg hover:shadow-xl transition-all">
+                    <ShoppingCart className="w-6 h-6 mr-2" />
                     Browse Products
                   </Button>
                 </Link>
                 <a href="tel:+254736010873" className="flex-1 sm:flex-none">
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-navy-900">
-                    <Phone className="w-5 h-5 mr-2" />
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-navy-900 text-lg py-4 px-8 shadow-lg hover:shadow-xl transition-all">
+                    <Phone className="w-6 h-6 mr-2" />
                     Call +254 736 010 873
                   </Button>
                 </a>
               </div>
-              <div className="mt-6 md:mt-8 flex flex-wrap gap-4 md:gap-6 items-center">
-                <div className="flex items-center gap-2 text-white">
-                  <Truck className="w-4 h-4 md:w-5 md:h-5 text-orange-500" />
-                  <span className="text-xs md:text-sm">Free Delivery</span>
+              <div className="flex flex-wrap gap-6 items-center">
+                <div className="flex items-center gap-3 text-white">
+                  <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center border border-green-500/30">
+                    <Shield className="w-6 h-6 text-green-400" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-lg">15-Year Warranty</p>
+                    <p className="text-sm text-gray-300">Industry-leading</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 text-white">
-                  <Shield className="w-4 h-4 md:w-5 md:h-5 text-orange-500" />
-                  <span className="text-xs md:text-sm">15-Year Warranty</span>
+                <div className="flex items-center gap-3 text-white">
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center border border-blue-500/30">
+                    <Award className="w-6 h-6 text-blue-400" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-lg">KEBS Certified</p>
+                    <p className="text-sm text-gray-300">Quality assured</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 md:gap-3 bg-white/20 backdrop-blur-sm px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-white/30">
-                  <Phone className="w-4 h-4 md:w-6 md:h-6 text-orange-500" />
-                  <a href="tel:+254736010873" className="text-sm md:text-lg font-bold text-white hover:text-orange-400 transition-colors">
-                    +254 736 010 873
-                  </a>
+                <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-2xl border border-white/20">
+                  <Phone className="w-6 h-6 text-orange-400" />
+                  <div>
+                    <a href="tel:+254736010873" className="text-xl font-bold text-white hover:text-orange-400 transition-colors">+254 736 010 873</a>
+                    <p className="text-xs text-gray-300">24/7 Support</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

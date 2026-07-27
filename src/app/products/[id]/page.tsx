@@ -203,6 +203,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                       className="object-cover"
                       sizes="25vw"
                       quality={75}
+                      loading="lazy"
                     />
                   </button>
                 ))}
@@ -524,6 +525,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                       className="object-cover transition-transform duration-300 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       quality={80}
+                      loading="lazy"
                     />
                     <div className="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                       {relatedProduct.capacity}

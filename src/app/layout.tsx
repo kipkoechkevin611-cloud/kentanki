@@ -68,6 +68,8 @@ export default function RootLayout({
       '@type': 'PostalAddress',
       addressCountry: 'KE',
       addressLocality: 'Nairobi',
+      addressRegion: 'Nairobi',
+      streetAddress: 'Industrial Area',
     },
     geo: {
       '@type': 'GeoCoordinates',
@@ -76,6 +78,17 @@ export default function RootLayout({
     },
     openingHours: 'Mo-Sa 08:00-18:00',
     priceRange: 'KSh 5,500 - KSh 132,500',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: '150',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'Kenya',
+    },
     makesOffer: [
       {
         '@type': 'Offer',
@@ -99,6 +112,65 @@ export default function RootLayout({
         availability: 'https://schema.org/InStock',
       },
     ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Water Tanks',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Product',
+            name: '1000L Vertical Tank',
+            description: 'Compact vertical tank perfect for small households',
+            category: 'Water Tanks',
+          },
+          price: '5500',
+          priceCurrency: 'KES',
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Product',
+            name: '5000L Vertical Tank',
+            description: 'Medium capacity tank for residential use',
+            category: 'Water Tanks',
+          },
+          price: '27500',
+          priceCurrency: 'KES',
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Product',
+            name: '10000L Vertical Tank',
+            description: 'Large capacity tank for commercial use',
+            category: 'Water Tanks',
+          },
+          price: '51000',
+          priceCurrency: 'KES',
+        },
+      ],
+    },
+  };
+
+  const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Kentank Kenya',
+    url: 'https://kentank.co.ke',
+    logo: 'https://kentank.co.ke/assets/logo.jpeg',
+    description: 'Leading supplier of genuine Rototank water tanks in Kenya',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+254736010873',
+      contactType: 'sales',
+      availableLanguage: 'English',
+    },
+    sameAs: [
+      'https://www.facebook.com/kentankkenya',
+      'https://twitter.com/kentankkenya',
+      'https://www.instagram.com/kentankkenya',
+    ],
   };
 
   return (
@@ -107,6 +179,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
       </head>
       <body className={inter.className}>

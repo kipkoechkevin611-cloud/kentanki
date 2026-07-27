@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Chatbot from "../components/Chatbot";
+import FloatingCart from "../components/FloatingCart";
 import CartToastWrapper from "../components/CartToastWrapper";
 import { CartProvider } from "../context/CartContext";
 
@@ -193,6 +194,7 @@ export default function RootLayout({
             {children}
           </div>
           <CartToastWrapper />
+          <FloatingCart />
           <Chatbot />
         </CartProvider>
       </body>

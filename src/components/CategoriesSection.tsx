@@ -55,6 +55,12 @@ const CategoriesSection: React.FC = () => {
           className="flex justify-between items-center mb-8"
         >
           <h2 className="text-2xl md:text-3xl font-bold text-navy-900">Our Best Selling Categories</h2>
+          <Link href="/products">
+            <button className="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors">
+              View All Products
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </Link>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

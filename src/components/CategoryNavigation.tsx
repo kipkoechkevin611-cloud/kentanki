@@ -33,12 +33,12 @@ const CategoryNavigation = () => {
       aria-label="Category navigation"
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-center gap-2 md:gap-4 py-2.5 overflow-x-auto">
+        <div className="flex items-center justify-center gap-4 md:gap-6 py-3 overflow-x-auto">
           {categories.map((category, index) => (
             <Link
               key={index}
               href={category.href}
-              className="text-xs md:text-sm text-gray-700 hover:text-orange-500 transition-colors font-medium whitespace-nowrap px-2 py-1.5 rounded-lg hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="text-sm md:text-base text-gray-700 hover:text-orange-500 transition-colors font-medium whitespace-nowrap px-3 py-2 rounded-lg hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-orange-500"
               aria-label={`Browse ${category.label}`}
             >
               {category.label}

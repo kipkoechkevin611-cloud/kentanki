@@ -212,7 +212,7 @@ export default function Home() {
               className="inline-block mb-6"
             >
               <span className="bg-orange-500/20 text-orange-400 px-4 py-2 rounded-full text-sm font-semibold border border-orange-500/30">
-                🇰🇪 Kenya's #1 Water Tank Supplier
+                🇰🇪 Kenya&apos;s #1 Water Tank Supplier
               </span>
             </motion.div>
             

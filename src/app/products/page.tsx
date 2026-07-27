@@ -485,6 +485,7 @@ export default function Products() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {searchedProducts.map((product, index) => {
               const savings = product.originalPrice - product.salePrice;
+              const isBestSeller = index === 0 || index === 3 || index === 7;
               return (
                 <motion.div
                   key={product.id}
@@ -492,17 +493,22 @@ export default function Products() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05 }}
                 >
-                  <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full flex flex-col group">
-                    <div className="relative h-40 md:h-48 overflow-hidden bg-gray-100">
+                  <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col group border border-gray-100 hover:border-orange-200">
+                    <div className="relative h-44 md:h-52 overflow-hidden bg-gray-100">
                       <Image
                         src={product.image}
                         alt={product.name}
                         fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                         quality={80}
                       />
                       <div className="absolute top-2 left-2 flex flex-col gap-1.5">
+                        {isBestSeller && (
+                          <span className="bg-purple-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">
+                            BEST SELLER
+                          </span>
+                        )}
                         <span className="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">
                           SALE
                         </span>
@@ -519,35 +525,27 @@ export default function Products() {
                         {product.capacity}
                       </div>
                     </div>
-                    <div className="p-3 md:p-4 flex-1 flex flex-col">
-                      <h3 className="text-sm md:text-base font-bold text-navy-900 mb-1 line-clamp-2">{product.name}</h3>
-                      <p className="text-xs text-gray-500 mb-2">{product.dimensions}</p>
-                      <div className="mb-2">
+                    <div className="p-4 md:p-5 flex-1 flex flex-col">
+                      <h3 className="text-sm md:text-base font-bold text-navy-900 mb-2 line-clamp-2">{product.name}</h3>
+                      <p className="text-xs text-gray-500 mb-3">{product.dimensions}</p>
+                      <div className="mb-3">
                         <p className="text-xs text-gray-400 line-through">KSh {product.originalPrice.toLocaleString()}</p>
                         <p className="text-lg md:text-xl font-bold text-green-600">KSh {product.salePrice.toLocaleString()}</p>
                         <p className="text-xs text-green-600 font-semibold">You Save KSh {savings.toLocaleString()}</p>
+                        <p className="text-xs text-orange-500 mt-1">Special Offer – Limited Time Price</p>
                       </div>
                       <div className="mt-auto space-y-2">
-                        <a
-                          href={`https://wa.me/254736010873?text=${encodeURIComponent(`Hello, I would like to order: ${product.name} (${product.capacity}) - KSh ${product.salePrice.toLocaleString()}`)}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-3 rounded-lg flex items-center justify-center gap-2 transition-colors text-sm"
-                        >
-                          <MessageCircle className="w-4 h-4" />
-                          Order on WhatsApp
-                        </a>
                         <div className="flex gap-2">
                           <Button
                             variant="primary"
-                            className="flex-1 text-xs py-2"
+                            className="flex-1 text-xs py-2.5"
                             onClick={() => handleAddToCart(product)}
                           >
                             <ShoppingCart className="w-3 h-3 mr-1" />
                             Add to Cart
                           </Button>
                           <Link href={`/products/${product.id}`} className="flex-1">
-                            <Button variant="outline" className="w-full text-xs py-2">Details</Button>
+                            <Button variant="outline" className="w-full text-xs py-2.5">Details</Button>
                           </Link>
                         </div>
                       </div>

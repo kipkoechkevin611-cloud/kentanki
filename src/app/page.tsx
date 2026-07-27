@@ -41,33 +41,37 @@ export default function Home() {
   const products = [
     {
       id: 1,
-      name: 'Vertical Tank',
+      name: 'Vertical Tank 5000L',
       capacity: '5000L',
-      price: 'KSh 24,500',
+      originalPrice: 38000,
+      salePrice: 24500,
       image: '/assets/vertical (2).jpeg',
       description: 'Perfect for residential and commercial water storage',
     },
     {
       id: 2,
-      name: 'Horizontal Tank',
+      name: 'Horizontal Tank 3000L',
       capacity: '3000L',
-      price: 'KSh 14,200',
+      originalPrice: 20000,
+      salePrice: 14200,
       image: '/assets/horizontal (2).jpeg',
       description: 'Ideal for spaces with height restrictions',
     },
     {
       id: 3,
-      name: 'Loft Tank',
+      name: 'Loft Tank 1000L',
       capacity: '1000L',
-      price: 'KSh 4,500',
+      originalPrice: 7500,
+      salePrice: 4500,
       image: '/assets/loft tank.jpeg',
       description: 'Compact design for rooftop installations',
     },
     {
       id: 4,
-      name: 'Septic Tank',
+      name: 'Septic Tank 3000L',
       capacity: '3000L',
-      price: 'KSh 14,500',
+      originalPrice: 20000,
+      salePrice: 14500,
       image: '/assets/Septic Tank.jpeg',
       description: 'Durable septic tank for waste management',
     },
@@ -229,58 +233,71 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {products.map((product, index) => (
-              <motion.div
-                key={product.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card>
-                  <div className="relative h-48 overflow-hidden">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      className="object-cover transition-transform duration-300 hover:scale-110"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      quality={80}
-                    />
-                    <div className="absolute top-3 right-3 bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                      {product.capacity}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            {products.map((product, index) => {
+              const savings = product.originalPrice - product.salePrice;
+              return (
+                <motion.div
+                  key={product.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full flex flex-col group">
+                    <div className="relative h-40 md:h-48 overflow-hidden bg-gray-100">
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                        quality={80}
+                      />
+                      <div className="absolute top-2 left-2 flex flex-col gap-1.5">
+                        <span className="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">
+                          SALE
+                        </span>
+                        <span className="bg-green-500 text-white px-2 py-0.5 rounded-full text-xs font-semibold flex items-center gap-1">
+                          <CheckCircle className="w-2.5 h-2.5" />
+                          In Stock
+                        </span>
+                        <span className="bg-blue-500 text-white px-2 py-0.5 rounded-full text-xs font-semibold flex items-center gap-1">
+                          <Truck className="w-2.5 h-2.5" />
+                          Free Delivery
+                        </span>
+                      </div>
+                      <div className="absolute top-2 right-2 bg-orange-500 text-white px-2 py-0.5 rounded-full text-xs font-semibold">
+                        {product.capacity}
+                      </div>
+                    </div>
+                    <div className="p-3 md:p-4 flex-1 flex flex-col">
+                      <h3 className="text-sm md:text-base font-bold text-navy-900 mb-1 line-clamp-2">{product.name}</h3>
+                      <p className="text-xs text-gray-600 mb-2 line-clamp-2">{product.description}</p>
+                      <div className="mb-2">
+                        <p className="text-xs text-gray-400 line-through">KSh {product.originalPrice.toLocaleString()}</p>
+                        <p className="text-lg md:text-xl font-bold text-green-600">KSh {product.salePrice.toLocaleString()}</p>
+                        <p className="text-xs text-green-600 font-semibold">You Save KSh {savings.toLocaleString()}</p>
+                      </div>
+                      <div className="mt-auto space-y-2">
+                        <a
+                          href={`https://wa.me/254736010873?text=${encodeURIComponent(`Hello, I would like to order: ${product.name} (${product.capacity}) - KSh ${product.salePrice.toLocaleString()}`)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-3 rounded-lg flex items-center justify-center gap-2 transition-colors text-sm"
+                        >
+                          <MessageCircle className="w-4 h-4" />
+                          Order on WhatsApp
+                        </a>
+                        <Link href="/products">
+                          <Button variant="outline" className="w-full text-xs py-2">View All Products</Button>
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                  <div className="p-4">
-                    <h3 className="text-lg font-bold text-navy-900 mb-1">{product.name}</h3>
-                    <p className="text-sm text-gray-600 mb-3">{product.description}</p>
-                    <p className="text-xl font-bold text-orange-500 mb-3">{product.price}</p>
-                    <div className="flex gap-2">
-                      <Button
-                        variant="primary"
-                        className="flex-1 text-sm py-2"
-                        onClick={() => setIsOrderModalOpen(true)}
-                      >
-                        Order Now
-                      </Button>
-                      <Link href="/products">
-                        <Button variant="outline" className="text-sm py-2 px-3">Details</Button>
-                      </Link>
-                    </div>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/products">
-              <Button variant="secondary" size="lg">
-                View All Products
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-            </Link>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

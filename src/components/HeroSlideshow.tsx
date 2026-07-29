@@ -131,7 +131,7 @@ const HeroSlideshow = () => {
                           {slide.cta || 'Shop Now'}
                         </motion.button>
                       </Link>
-                      <a href="https://wa.me/2540785398094" target="_blank" rel="noopener noreferrer">
+                      <a href="https://wa.me/2540736010873" target="_blank" rel="noopener noreferrer">
                         <motion.button
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
@@ -158,8 +158,8 @@ const HeroSlideshow = () => {
                       </div>
                       <div className="flex items-center gap-3 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30">
                         <Phone className="w-6 h-6 text-orange-500" />
-                        <a href="tel:+2540785398094" className="text-lg font-bold text-white hover:text-orange-400 transition-colors">
-                          +254 785 398 094
+                        <a href="tel:+2540736010873" className="text-lg font-bold text-white hover:text-orange-400 transition-colors">
+                          +254 736 010 873
                         </a>
                       </div>
                     </motion.div>

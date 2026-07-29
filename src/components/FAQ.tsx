@@ -119,11 +119,11 @@ const FAQ: React.FC = () => {
         >
           <p className="text-gray-600 mb-4">Still have questions?</p>
           <a
-            href="tel:+2540785398094"
+            href="tel:+2540736010873"
             className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
           >
             <Phone className="w-5 h-5" />
-            Call +254 785 398 094
+            Call +254 736 010 873
           </a>
         </motion.div>
       </div>

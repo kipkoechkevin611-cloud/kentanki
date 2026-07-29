@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Plus, Minus, Trash2, ShoppingBag, User, Phone as PhoneIcon, MapPin, Truck, Clock, CheckCircle, ChevronRight, ChevronLeft, MessageCircle } from 'lucide-react';
+import { X, Plus, Minus, Trash2, ShoppingBag, User, Phone as PhoneIcon, MapPin, Truck, Clock, CheckCircle, ChevronRight, ChevronLeft, MessageCircle, Mail } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import Modal from './ui/Modal';
 import Image from 'next/image';
@@ -14,6 +14,7 @@ const CartModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    email: '',
     location: '',
     notes: '',
   });
@@ -32,6 +33,8 @@ const CartModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
     if (!formData.name.trim()) newErrors.name = 'Name is required';
     if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
     if (formData.phone.length < 10) newErrors.phone = 'Please enter a valid phone number';
+    if (!formData.email.trim()) newErrors.email = 'Email is required';
+    if (!formData.email.includes('@') || !formData.email.includes('.')) newErrors.email = 'Please enter a valid email';
     if (!formData.location.trim()) newErrors.location = 'Location is required';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -53,6 +56,7 @@ const CartModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
 Customer Details:
 • Name: ${formData.name}
 • Phone: ${formData.phone}
+• Email: ${formData.email}
 • Location: ${formData.location}
 ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
 
@@ -66,7 +70,42 @@ ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
       clearCart();
       setShowCheckoutForm(false);
       onClose();
- setFormData({ name: '', phone: '', location: '', notes: '' });
+      setFormData({ name: '', phone: '', email: '', location: '', notes: '' });
+    }, 1000);
+  };
+
+  const handleEmailCheckout = () => {
+    if (!validateForm()) return;
+
+    setIsSubmitting(true);
+
+    const message = cart
+      .map(
+        (item) =>
+          `• ${item.name} (${item.capacity}) - ${item.price} x ${item.quantity}`
+      )
+      .join('\n');
+    const total = cartTotal.toLocaleString();
+    const customerInfo = `
+Customer Details:
+• Name: ${formData.name}
+• Phone: ${formData.phone}
+• Email: ${formData.email}
+• Location: ${formData.location}
+${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
+
+    const emailSubject = encodeURIComponent(`Water Tank Order - ${formData.name}`);
+    const emailBody = encodeURIComponent(
+      `Hello, I would like to order:\n\n${message}\n\nTotal: KSh ${total}\n\n${customerInfo}\n\nPlease contact me with delivery details and payment options.`
+    );
+
+    setTimeout(() => {
+      window.open(`mailto:info@kentank.co.ke?subject=${emailSubject}&body=${emailBody}`, '_blank');
+      setIsSubmitting(false);
+      clearCart();
+      setShowCheckoutForm(false);
+      onClose();
+      setFormData({ name: '', phone: '', email: '', location: '', notes: '' });
     }, 1000);
   };
 
@@ -275,6 +314,21 @@ ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <Mail className="w-4 h-4 inline mr-2" />
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-900 placeholder-gray-500 ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
+                      placeholder="your@email.com"
+                    />
+                    {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                       <MapPin className="w-4 h-4 inline mr-2" />
                       Delivery Location *
                     </label>
@@ -319,28 +373,52 @@ ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
                     </div>
                   </div>
 
-                  <button
-                    onClick={handleWhatsAppCheckout}
-                    disabled={isSubmitting}
-                    className="w-full bg-green-500 hover:bg-green-600 disabled:bg-gray-400 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <motion.div
-                          animate={{ rotate: 360 }}
-                          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                        >
-                          <ShoppingBag className="w-5 h-5" />
-                        </motion.div>
-                        Processing...
-                      </>
-                    ) : (
-                      <>
-                        <MessageCircle className="w-5 h-5" />
-                        Order Now
-                      </>
-                    )}
-                  </button>
+                  <div className="space-y-3">
+                    <button
+                      onClick={handleWhatsAppCheckout}
+                      disabled={isSubmitting}
+                      className="w-full bg-green-500 hover:bg-green-600 disabled:bg-gray-400 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <motion.div
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                          >
+                            <ShoppingBag className="w-5 h-5" />
+                          </motion.div>
+                          Processing...
+                        </>
+                      ) : (
+                        <>
+                          <MessageCircle className="w-5 h-5" />
+                          Order via WhatsApp
+                        </>
+                      )}
+                    </button>
+                    <button
+                      onClick={handleEmailCheckout}
+                      disabled={isSubmitting}
+                      className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-gray-400 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <motion.div
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                          >
+                            <ShoppingBag className="w-5 h-5" />
+                          </motion.div>
+                          Processing...
+                        </>
+                      ) : (
+                        <>
+                          <Mail className="w-5 h-5" />
+                          Order via Email
+                        </>
+                      )}
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             )}

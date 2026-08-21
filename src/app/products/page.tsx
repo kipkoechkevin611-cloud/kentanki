@@ -415,7 +415,7 @@ export default function Products() {
       </section>
 
       {/* Category Filter & Search */}
-      <section className="py-8 bg-white border-b sticky top-20 z-30 bg-opacity-95 backdrop-blur-sm">
+      <section className="py-4 bg-white border-b">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
             <div className="flex items-center gap-2">
@@ -462,20 +462,6 @@ export default function Products() {
               Found {searchedProducts.length} of {filteredProducts.length} products
             </p>
           )}
-        </div>
-      </section>
-
-      {/* Delivery Estimator */}
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-2xl mx-auto"
-          >
-            <DeliveryEstimator />
-          </motion.div>
         </div>
       </section>
 
@@ -599,6 +585,31 @@ export default function Products() {
                 </Button>
               </Link>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Delivery Estimator */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-navy-900 mb-4">Estimate Your Delivery Time</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Check how long it will take to deliver your water tank to your location
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-2xl mx-auto"
+          >
+            <DeliveryEstimator />
           </motion.div>
         </div>
       </section>

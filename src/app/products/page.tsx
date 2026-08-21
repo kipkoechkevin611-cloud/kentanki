@@ -396,7 +396,7 @@ export default function Products() {
 
   return (
     <main className="min-h-screen bg-gray-50">
-      <Navigation />
+      <Navigation compact />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-navy-900 to-navy-800 py-20">
@@ -482,7 +482,7 @@ export default function Products() {
       {/* Products Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
             {searchedProducts.map((product, index) => {
               const savings = product.originalPrice - product.salePrice;
               const isBestSeller = index === 0 || index === 3 || index === 7;
@@ -494,7 +494,7 @@ export default function Products() {
                   transition={{ delay: index * 0.05 }}
                 >
                   <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col group border border-gray-100 hover:border-orange-200">
-                    <div className="relative h-44 md:h-52 overflow-hidden bg-gray-100">
+                    <div className="relative h-36 sm:h-40 md:h-48 overflow-hidden bg-gray-100">
                       <Image
                         src={product.image}
                         alt={product.name}
@@ -526,27 +526,27 @@ export default function Products() {
                         {product.capacity}
                       </div>
                     </div>
-                    <div className="p-4 md:p-5 flex-1 flex flex-col">
-                      <h3 className="text-sm md:text-base font-bold text-navy-900 mb-2 line-clamp-2">{product.name}</h3>
-                      <p className="text-xs text-gray-500 mb-3">{product.dimensions}</p>
-                      <div className="mb-3">
-                        <p className="text-xs text-gray-400 line-through">KSh {product.originalPrice.toLocaleString()}</p>
-                        <p className="text-lg md:text-xl font-bold text-green-600">KSh {product.salePrice.toLocaleString()}</p>
-                        <p className="text-xs text-green-600 font-semibold">You Save KSh {savings.toLocaleString()}</p>
-                        <p className="text-xs text-orange-500 mt-1">Special Offer – Limited Time Price</p>
+                    <div className="p-3 sm:p-4 flex-1 flex flex-col">
+                      <h3 className="text-xs sm:text-sm font-bold text-navy-900 mb-1.5 line-clamp-2">{product.name}</h3>
+                      <p className="text-[10px] sm:text-xs text-gray-500 mb-2">{product.dimensions}</p>
+                      <div className="mb-2">
+                        <p className="text-[10px] sm:text-xs text-gray-400 line-through">KSh {product.originalPrice.toLocaleString()}</p>
+                        <p className="text-sm sm:text-base md:text-lg font-bold text-green-600">KSh {product.salePrice.toLocaleString()}</p>
+                        <p className="text-[10px] sm:text-xs text-green-600 font-semibold">You Save KSh {savings.toLocaleString()}</p>
+                        <p className="text-[10px] sm:text-xs text-orange-500 mt-1">Special Offer – Limited Time Price</p>
                       </div>
-                      <div className="mt-auto space-y-2">
+                      <div className="mt-auto space-y-1.5">
                         <div className="flex gap-2">
                           <Button
                             variant="primary"
-                            className="flex-1 text-xs py-2.5"
+                            className="flex-1 text-[10px] sm:text-xs py-2"
                             onClick={() => handleAddToCart(product)}
                           >
                             <ShoppingCart className="w-3 h-3 mr-1" />
                             Add to Cart
                           </Button>
                           <Link href={`/products/${product.id}`} className="flex-1">
-                            <Button variant="outline" className="w-full text-xs py-2.5">Details</Button>
+                            <Button variant="outline" className="w-full text-[10px] sm:text-xs py-2">Details</Button>
                           </Link>
                         </div>
                       </div>

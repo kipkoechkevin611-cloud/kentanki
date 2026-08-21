@@ -9,7 +9,7 @@ import Button from './ui/Button';
 import { useCart } from '../context/CartContext';
 import CartModal from './CartModal';
 
-const Navigation = () => {
+const Navigation = ({ compact = false }: { compact?: boolean }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -40,7 +40,7 @@ const Navigation = () => {
       aria-label="Main navigation"
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className={`flex items-center justify-between ${compact ? 'h-14' : 'h-20'}`}>
           <Link href="/" className="flex items-center gap-2" aria-label="Kentank Home">
             <div className="relative w-12 h-12">
               <Image

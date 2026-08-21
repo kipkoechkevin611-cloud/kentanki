@@ -8,6 +8,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import TankCalculator from '../components/TankCalculator';
 import WhatsAppOrderModal from '../components/WhatsAppOrderModal';
+import DeliveryEstimator from '../components/DeliveryEstimator';
 import FAQ from '../components/FAQ';
 import TrustBadges from '../components/TrustBadges';
 import WhyChooseUs from '../components/WhyChooseUs';
@@ -60,40 +61,157 @@ export default function Home() {
 
   const products = [
     {
-      id: 1,
+      id: 17,
+      name: 'Vertical Tank 24000L',
+      capacity: '24000L',
+      originalPrice: 180000,
+      salePrice: 132500,
+      image: '/assets/vertical (2).jpeg',
+      description: 'Largest capacity for major industrial operations',
+    },
+    {
+      id: 16,
+      name: 'Vertical Tank 20000L',
+      capacity: '20000L',
+      originalPrice: 135000,
+      salePrice: 98500,
+      image: '/assets/vertical (2).jpeg',
+      description: 'Massive industrial tank for factories',
+    },
+    {
+      id: 15,
+      name: 'Vertical Tank 16000L',
+      capacity: '16000L',
+      originalPrice: 100000,
+      salePrice: 72500,
+      image: '/assets/vertical (2).jpeg',
+      description: 'Premium industrial capacity',
+    },
+    {
+      id: 14,
+      name: 'Vertical Tank 12000L',
+      capacity: '12000L',
+      originalPrice: 80000,
+      salePrice: 58000,
+      image: '/assets/vertical (2).jpeg',
+      description: 'Extra-large capacity for major operations',
+    },
+    {
+      id: 13,
+      name: 'Vertical Tank 10000L',
+      capacity: '10000L',
+      originalPrice: 70000,
+      salePrice: 51000,
+      image: '/assets/vertical (2).jpeg',
+      description: 'Massive capacity for commercial and industrial',
+    },
+    {
+      id: 12,
+      name: 'Vertical Tank 8000L',
+      capacity: '8000L',
+      originalPrice: 55000,
+      salePrice: 38500,
+      image: '/assets/vertical (2).jpeg',
+      description: 'Extra-large capacity for industrial use',
+    },
+    {
+      id: 11,
+      name: 'Vertical Tank 6000L',
+      capacity: '6000L',
+      originalPrice: 45000,
+      salePrice: 32500,
+      image: '/assets/vertical (2).jpeg',
+      description: 'Large capacity for commercial properties',
+    },
+    {
+      id: 10,
       name: 'Vertical Tank 5000L',
       capacity: '5000L',
       originalPrice: 38000,
-      salePrice: 24500,
+      salePrice: 27500,
       image: '/assets/vertical (2).jpeg',
-      description: 'Perfect for residential and commercial water storage',
+      description: 'Premium capacity for homes and businesses',
     },
     {
-      id: 2,
-      name: 'Horizontal Tank 3000L',
-      capacity: '3000L',
-      originalPrice: 20000,
-      salePrice: 14200,
-      image: '/assets/horizontal (2).jpeg',
-      description: 'Ideal for spaces with height restrictions',
+      id: 9,
+      name: 'Vertical Tank 4000L',
+      capacity: '4000L',
+      originalPrice: 26000,
+      salePrice: 18500,
+      image: '/assets/vertical (2).jpeg',
+      description: 'Extra-large capacity for commercial use',
     },
     {
-      id: 3,
-      name: 'Loft Tank 1000L',
-      capacity: '1000L',
-      originalPrice: 7500,
-      salePrice: 4500,
-      image: '/assets/loft tank.jpeg',
-      description: 'Compact design for rooftop installations',
-    },
-    {
-      id: 4,
-      name: 'Septic Tank 3000L',
+      id: 8,
+      name: 'Vertical Tank 3000L',
       capacity: '3000L',
       originalPrice: 20000,
       salePrice: 14500,
-      image: '/assets/Septic Tank.jpeg',
-      description: 'Durable septic tank for waste management',
+      image: '/assets/vertical.jpeg',
+      description: 'Large capacity for homes and small businesses',
+    },
+    {
+      id: 7,
+      name: 'Vertical Tank 2300L',
+      capacity: '2300L',
+      originalPrice: 15500,
+      salePrice: 10800,
+      image: '/assets/vertical.jpeg',
+      description: 'Premium vertical tank capacity',
+    },
+    {
+      id: 6,
+      name: 'Vertical Tank 2000L',
+      capacity: '2000L',
+      originalPrice: 15000,
+      salePrice: 10500,
+      image: '/assets/vertical.jpeg',
+      description: 'Extra-large vertical tank for homes',
+    },
+    {
+      id: 5,
+      name: 'Vertical Tank 1500L',
+      capacity: '1500L',
+      originalPrice: 9500,
+      salePrice: 6800,
+      image: '/assets/vertical.jpeg',
+      description: 'Large vertical tank for family use',
+    },
+    {
+      id: 4,
+      name: 'Vertical Tank 1000L',
+      capacity: '1000L',
+      originalPrice: 7500,
+      salePrice: 5500,
+      image: '/assets/vertical.jpeg',
+      description: 'Standard vertical tank for average households',
+    },
+    {
+      id: 3,
+      name: 'Vertical Tank 500L',
+      capacity: '500L',
+      originalPrice: 3800,
+      salePrice: 2800,
+      image: '/assets/vertical.jpeg',
+      description: 'Medium vertical tank for small families',
+    },
+    {
+      id: 2,
+      name: 'Vertical Tank 250L',
+      capacity: '250L',
+      originalPrice: 2500,
+      salePrice: 1800,
+      image: '/assets/vertical.jpeg',
+      description: 'Small vertical tank for basic water storage',
+    },
+    {
+      id: 1,
+      name: 'Vertical Tank 100L',
+      capacity: '100L',
+      originalPrice: 1500,
+      salePrice: 1100,
+      image: '/assets/vertical.jpeg',
+      description: 'Compact vertical tank perfect for small households',
     },
   ];
 
@@ -311,7 +429,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="flex justify-between items-center mb-8"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900">Featured Products</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900">Vertical Tanks</h2>
             <Link href="/products">
               <button className="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors">
                 View All Products
@@ -320,7 +438,7 @@ export default function Home() {
             </Link>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
             {products.map((product, index) => {
               const savings = product.originalPrice - product.salePrice;
               const isBestSeller = index === 0 || index === 2;
@@ -333,7 +451,7 @@ export default function Home() {
                   transition={{ delay: index * 0.1 }}
                 >
                   <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col group border border-gray-100 hover:border-orange-200">
-                    <div className="relative h-48 overflow-hidden bg-gray-100">
+                    <div className="relative h-36 sm:h-40 md:h-48 overflow-hidden bg-gray-100">
                       <Image
                         src={product.image}
                         alt={product.name}
@@ -357,21 +475,21 @@ export default function Home() {
                         {product.capacity}
                       </div>
                     </div>
-                    <div className="p-4 flex-1 flex flex-col">
-                      <h3 className="text-base font-bold text-navy-900 mb-2 line-clamp-2">{product.name}</h3>
-                      <p className="text-sm text-gray-600 mb-3 line-clamp-2">{product.description}</p>
-                      <div className="mb-3">
-                        <p className="text-sm text-gray-400 line-through">KSh {product.originalPrice.toLocaleString()}</p>
-                        <p className="text-lg font-bold text-green-600">KSh {product.salePrice.toLocaleString()}</p>
-                        <p className="text-sm text-green-600 font-semibold">Save KSh {savings.toLocaleString()}</p>
+                    <div className="p-3 sm:p-4 flex-1 flex flex-col">
+                      <h3 className="text-xs sm:text-sm md:text-base font-bold text-navy-900 mb-1.5 line-clamp-2">{product.name}</h3>
+                      <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 mb-2 line-clamp-2">{product.description}</p>
+                      <div className="mb-2">
+                        <p className="text-[10px] sm:text-xs md:text-sm text-gray-400 line-through">KSh {product.originalPrice.toLocaleString()}</p>
+                        <p className="text-sm sm:text-base md:text-lg font-bold text-green-600">KSh {product.salePrice.toLocaleString()}</p>
+                        <p className="text-[10px] sm:text-xs md:text-sm text-green-600 font-semibold">Save KSh {savings.toLocaleString()}</p>
                       </div>
                       <div className="mt-auto space-y-2">
                         <Button
                           variant="primary"
-                          className="w-full text-sm py-2.5"
+                          className="w-full text-[10px] sm:text-xs md:text-sm py-2"
                           onClick={() => handleAddToCart(product)}
                         >
-                          <ShoppingCart className="w-4 h-4 mr-2" />
+                          <ShoppingCart className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                           Add to Cart
                         </Button>
                       </div>
@@ -665,6 +783,31 @@ export default function Home() {
       <TrustBadges />
 
       <FAQ />
+
+      {/* Delivery Estimator */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-navy-900 mb-4">Estimate Your Delivery Time</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Check how long it will take to deliver your water tank to your location
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-2xl mx-auto"
+          >
+            <DeliveryEstimator />
+          </motion.div>
+        </div>
+      </section>
 
       <Footer />
 

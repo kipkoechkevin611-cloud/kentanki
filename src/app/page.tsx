@@ -452,13 +452,10 @@ export default function Home() {
                 >
                   <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col group border border-gray-100 hover:border-orange-200">
                     <div className="relative h-36 sm:h-40 md:h-48 overflow-hidden bg-gray-100">
-                      <Image
+                      <img
                         src={product.image}
                         alt={product.name}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                        quality={80}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
                       />
                       <div className="absolute top-2 left-2 flex flex-col gap-1.5">

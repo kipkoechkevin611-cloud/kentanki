@@ -66,7 +66,7 @@ export default function Home() {
       capacity: '24000L',
       originalPrice: 180000,
       salePrice: 132500,
-      image: '/assets/vertical (2).jpeg',
+      image: '/assets/KENTANK Water Tanks8.jpeg',
       description: 'Largest capacity for major industrial operations',
     },
     {
@@ -75,7 +75,7 @@ export default function Home() {
       capacity: '20000L',
       originalPrice: 135000,
       salePrice: 98500,
-      image: '/assets/vertical (2).jpeg',
+      image: '/assets/KENTANK Water Tanks8.jpeg',
       description: 'Massive industrial tank for factories',
     },
     {
@@ -84,7 +84,7 @@ export default function Home() {
       capacity: '16000L',
       originalPrice: 100000,
       salePrice: 72500,
-      image: '/assets/vertical (2).jpeg',
+      image: '/assets/KENTANK Water Tanks8.jpeg',
       description: 'Premium industrial capacity',
     },
     {
@@ -93,7 +93,7 @@ export default function Home() {
       capacity: '12000L',
       originalPrice: 80000,
       salePrice: 58000,
-      image: '/assets/vertical (2).jpeg',
+      image: '/assets/KENTANK Water Tanks8.jpeg',
       description: 'Extra-large capacity for major operations',
     },
     {
@@ -102,7 +102,7 @@ export default function Home() {
       capacity: '10000L',
       originalPrice: 70000,
       salePrice: 51000,
-      image: '/assets/vertical (2).jpeg',
+      image: '/assets/KENTANK Water Tanks8.jpeg',
       description: 'Massive capacity for commercial and industrial',
     },
     {
@@ -111,7 +111,7 @@ export default function Home() {
       capacity: '8000L',
       originalPrice: 55000,
       salePrice: 38500,
-      image: '/assets/vertical (2).jpeg',
+      image: '/assets/KENTANK Water Tanks8.jpeg',
       description: 'Extra-large capacity for industrial use',
     },
     {
@@ -120,7 +120,7 @@ export default function Home() {
       capacity: '6000L',
       originalPrice: 45000,
       salePrice: 32500,
-      image: '/assets/vertical (2).jpeg',
+      image: '/assets/KENTANK Water Tanks8.jpeg',
       description: 'Large capacity for commercial properties',
     },
     {
@@ -129,7 +129,7 @@ export default function Home() {
       capacity: '5000L',
       originalPrice: 38000,
       salePrice: 27500,
-      image: '/assets/vertical (2).jpeg',
+      image: '/assets/KENTANK Water Tanks8.jpeg',
       description: 'Premium capacity for homes and businesses',
     },
     {
@@ -138,7 +138,7 @@ export default function Home() {
       capacity: '4000L',
       originalPrice: 26000,
       salePrice: 18500,
-      image: '/assets/vertical (2).jpeg',
+      image: '/assets/KENTANK Water Tanks8.jpeg',
       description: 'Extra-large capacity for commercial use',
     },
     {

@@ -147,7 +147,7 @@ export default function Home() {
       capacity: '3000L',
       originalPrice: 20000,
       salePrice: 14500,
-      image: '/assets/vertical.jpeg',
+      image: '/assets/KENTANK Water Tanks8.jpeg',
       description: 'Large capacity for homes and small businesses',
     },
     {
@@ -156,7 +156,7 @@ export default function Home() {
       capacity: '2300L',
       originalPrice: 15500,
       salePrice: 10800,
-      image: '/assets/vertical.jpeg',
+      image: '/assets/KENTANK Water Tanks8.jpeg',
       description: 'Premium vertical tank capacity',
     },
     {
@@ -165,7 +165,7 @@ export default function Home() {
       capacity: '2000L',
       originalPrice: 15000,
       salePrice: 10500,
-      image: '/assets/vertical.jpeg',
+      image: '/assets/KENTANK Water Tanks8.jpeg',
       description: 'Extra-large vertical tank for homes',
     },
     {
@@ -174,7 +174,7 @@ export default function Home() {
       capacity: '1500L',
       originalPrice: 9500,
       salePrice: 6800,
-      image: '/assets/vertical.jpeg',
+      image: '/assets/KENTANK Water Tanks8.jpeg',
       description: 'Large vertical tank for family use',
     },
     {
@@ -183,7 +183,7 @@ export default function Home() {
       capacity: '1000L',
       originalPrice: 7500,
       salePrice: 5500,
-      image: '/assets/vertical.jpeg',
+      image: '/assets/KENTANK Water Tanks8.jpeg',
       description: 'Standard vertical tank for average households',
     },
     {
@@ -192,7 +192,7 @@ export default function Home() {
       capacity: '500L',
       originalPrice: 3800,
       salePrice: 2800,
-      image: '/assets/vertical.jpeg',
+      image: '/assets/KENTANK Water Tanks8.jpeg',
       description: 'Medium vertical tank for small families',
     },
     {
@@ -201,7 +201,7 @@ export default function Home() {
       capacity: '250L',
       originalPrice: 2500,
       salePrice: 1800,
-      image: '/assets/vertical.jpeg',
+      image: '/assets/KENTANK Water Tanks8.jpeg',
       description: 'Small vertical tank for basic water storage',
     },
     {
@@ -210,7 +210,7 @@ export default function Home() {
       capacity: '100L',
       originalPrice: 1500,
       salePrice: 1100,
-      image: '/assets/vertical.jpeg',
+      image: '/assets/KENTANK Water Tanks8.jpeg',
       description: 'Compact vertical tank perfect for small households',
     },
   ];

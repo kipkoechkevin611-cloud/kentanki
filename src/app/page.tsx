@@ -348,7 +348,7 @@ export default function Home() {
                 </Button>
               </Link>
               <a
-                href="https://wa.me/254785398094"
+                href="https://wa.me/2540106795373"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 sm:flex-none min-w-[160px] md:min-w-[200px] inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm md:text-base lg:text-lg font-semibold py-3 md:py-4 px-4 md:px-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer"
@@ -357,11 +357,11 @@ export default function Home() {
                 Order via WhatsApp
               </a>
               <a
-                href="tel:+254785398094"
+                href="tel:+2540106795373"
                 className="flex-1 sm:flex-none min-w-[160px] md:min-w-[200px] inline-flex items-center justify-center gap-2 bg-white text-navy-900 hover:bg-gray-100 text-sm md:text-base lg:text-lg font-bold py-3 md:py-4 px-4 md:px-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer"
               >
                 <Phone className="w-4 h-4 md:w-5 md:h-5 text-orange-500" />
-                +254 785 398 094
+                +254 010 679 5373
               </a>
             </div>
             
